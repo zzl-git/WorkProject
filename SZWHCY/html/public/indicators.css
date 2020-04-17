@@ -1,0 +1,43 @@
+@media (min-width: 768px) {
+  .carousel-indicators {
+    margin-bottom: 0;
+    width: 100%;
+    margin-left: 0;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    padding: 15px 0;
+  }
+  .carousel-indicators li {
+    height: 15%;
+    width: 15%;
+    border: none;
+    text-indent: 0;
+    margin: 2px;
+    border-radius: 0;
+  }
+  .carousel-indicators li img {
+    height: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+  }
+  .carousel-indicators li.active {
+    border-radius: 0;
+    margin: 2px;
+    height: 15%;
+    width: 15%;
+    background: none;
+  }
+  .carousel-indicators li.active img {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: grayscale(0%);
+    filter: gray;
+  }
+}

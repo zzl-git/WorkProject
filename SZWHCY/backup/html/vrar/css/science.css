@@ -1,0 +1,163 @@
+.side_logo {
+  box-sizing: border-box;
+  padding: 20px 0 0 5%;
+}
+.carousel-control1 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: -78px;
+  right: 70px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bolder;
+  transition: background 0.5s;
+  border-radius: 2px;
+  z-index: 9999;
+}
+.carousel-control1:hover {
+  color: #fff;
+  background: #29af9e;
+}
+.carousel-control1:focus {
+  color: #fff;
+}
+.carousel-control1.right {
+  right: 0;
+}
+.carousel-control1.right::before {
+  content: "|";
+  position: absolute;
+  left: -12px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.rightNav li {
+  margin: 27px 0;
+  cursor: pointer;
+}
+.rightNav li.active span {
+  color: #fff;
+}
+.rightNav p {
+  font-size: 18px;
+  color: #565656;
+  position: relative;
+  width: 66px;
+  height: 9px;
+  background-color: #29af9e;
+}
+.rightNav p span {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
+.mainBox .carousel_box {
+  display: none;
+}
+.mainBox .carousel_box.active {
+  display: block;
+}
+@media (min-width: 768px) {
+  .rightNav li.active p {
+    width: 66px;
+    background-color: #29af9e;
+  }
+  .rightNav li.active span {
+    color: #fff;
+  }
+  .rightNav p {
+    width: 1px;
+    background-color: #000;
+    transition: width 0.2s;
+  }
+  .rightNav p:hover {
+    width: 66px;
+    background-color: #29af9e;
+  }
+  .rightNav p:hover span {
+    color: #fff;
+  }
+  .rightNav p span {
+    word-break: keep-all;
+    /* 不换行 */
+    white-space: nowrap;
+  }
+}
+@media (max-width: 767px) {
+  .carousel-indicators {
+    display: block;
+    transform: translateX(-50%);
+    margin-left: 0;
+    bottom: -46px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .carousel-indicators li {
+    background: #828282;
+    border: none;
+  }
+  .carousel-indicators .active {
+    background: #29af9e;
+  }
+  .carousel-indicators li:first-child::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    transform: translateX(-67%);
+    height: 5px;
+    background: #2a2a2a;
+    width: 100%;
+  }
+  .carousel-indicators li:last-child::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    transform: translateX(67%);
+    height: 5px;
+    background: #2a2a2a;
+    width: 100%;
+  }
+  .mainBox {
+    margin-top: 37px;
+  }
+  .rightNav {
+    margin-top: 40px;
+    background-image: url("../imgs/sideBgc.png");
+    background-repeat: no-repeat;
+    background-position: center 10%;
+  }
+  .rightNav li {
+    margin: 10px 0;
+  }
+  .rightNav li:last-child::after {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 4px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    margin: 87px auto 20px;
+  }
+  .rightNav li.active p {
+    color: #fff;
+  }
+  .rightNav li p {
+    font-size: 28px;
+    width: 70%;
+    height: 68px;
+    background-color: #191919;
+    border-radius: 5px;
+    margin: 0 auto;
+    line-height: 68px;
+  }
+  .rightNav li p span {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+/*# sourceMappingURL=science.css.map */

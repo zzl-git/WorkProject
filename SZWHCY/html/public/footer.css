@@ -1,0 +1,23 @@
+.footer {
+  background: #000;
+  color: #bcbcbc;
+}
+.footer .info {
+  margin-top: 10px;
+}
+.footer .info p {
+  margin-left: 20px;
+}
+.footer .footer_bot p {
+  margin-left: 20px;
+}
+@media (min-width: 992px) {
+  .footer .footer_bot p {
+    margin-left: 0;
+    text-align: left;
+  }
+  .footer .footer_bot p:first-child {
+    text-align: right;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

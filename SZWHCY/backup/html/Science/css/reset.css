@@ -1,0 +1,38 @@
+	body,div,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,input{
+		margin:0;
+		padding: 0;
+		font-family: MicrosoftYaHei;
+	}
+	img{
+		border: 0 none;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: none !important;
+	}
+	input{
+		border: 0 none;
+		outline-style: none;
+	}
+	.fl{
+		float: left;
+	}
+	.fr{
+		float: right;
+	}
+	.clearfix:after{
+		content: ".";
+		display: block;
+		height: 0;
+		line-height: 0;
+		visibility: hidden;
+		clear:both;
+	}
+	.clearfix{
+		zoom: 1;
+	}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>数展文化创意 | 影视制作</title>
+		<meta name="keywords" content="数展文化创意|影视制作|AR/VR|数字视觉|互动科技|人才招聘|" />
+		<meta name="description" content="数展文化创意|影视制作|AR/VR|数字视觉|互动科技|人才招聘|" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="renderer" content="webkit" />
+		<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon"/>
+		<link rel="stylesheet" type="text/css" href="../../public/bootstrap.css" />
+		<link rel="stylesheet" media="screen and (max-width:768px)" href="../../css/mobilenav.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/film.css" />
+		<link rel="stylesheet" type="text/css" href="../public/comnav.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/media.css" />
+		<!--[if lte IE 8]>
+			<script src="../../ie8/js/html5shiv.js" type="text/javascript"></script>
+			<script src="../../ie8/js/css3-mediaqueries.js" type="text/javascript"></script>
+			<link href="../../ie8/css/ie8.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+	</head>
+	<body>
+		<div id="nav">
+			<div class="logo">
+				<a href="../../index.html"><img src="../../img/logo/logo4.png" /></a>
+			</div>
+			<ul class="navPc">
+				<li class="slide1"></li>
+				<li class="slide2"></li>
+				<li><a href="../../index.html">首页</a></li>
+				<li><a href="../about/about-us.html">关于数展</a></li>
+				<li><a class="active" href="javascript">影视制作</a></li>
+				<li><a href="../seeshow/science.html">数字视觉</a></li>
+				<li><a href="../Science/science.html">互动科技</a></li>
+				<li><a href="../vrar/science.html">VR/AR</a></li>
+				<li><a href="../recruit/rec.html">人才招聘</a></li>
+			</ul>
+		</div>
+		<!-- MOBILE NAV BGIMG -->
+		<div id="bottom_bg">
+			<span class="mob_logo">
+				<img src="../../img/logo/logo4.png" />
+			</span>
+		</div>
+		<!-- MOBILE NAV BEGIN -->
+		<div id="wrapper">
+			<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+				<ul class="nav sidebar-nav">
+					<li></li>
+					<li>
+						<a href="../../index.html"><i class="fa fa-fw fa-home"></i><span></span>首页</a>
+					</li>
+					<li>
+						<a href="../about/about-us.html"><i class="fa fa-fw fa-home"></i><span></span>关于数展</a>
+					</li>
+					<li>
+						<a href="javascript:;"><i class="fa fa-fw fa-home"></i><span class="active"></span>影视制作</a>
+					</li>
+					<li>
+						<a href="../seeshow/science.html"><i class="fa fa-fw fa-home"></i><span></span>数字视觉</a>
+					</li>
+					<li>
+						<a href="../Science/science.html"><i class="fa fa-fw fa-home"></i><span></span>互动科技</a>
+					</li>
+					<li>
+						<a href="../vrar/science.html"><i class="fa fa-fw fa-home"></i><span></span>AR/VR</a>
+					</li>
+					<li>
+						<a href="../recruit/rec.html"><i class="fa fa-fw fa-home"></i><span></span>人才招聘</a>
+					</li>
+				</ul>
+			</nav>
+			<div id="page-content-wrapper">
+				<button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+					<span class="hamb-top"></span>
+					<span class="hamb-middle"></span>
+					<span class="hamb-bottom"></span>
+				</button>
+			</div>
+		</div>
+		<!-- MOBILE NAV END -->
+		<div id="content">
+			<div class="container-fluid">
+				<div class="mobile_ban"></div>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<div class="decc_logo">
+							<img src="../../img/logo/Decc_logo.png" />
+						</div>
+					</div>
+					<div id="app" class="text col-lg-9 col-md-9 col-sm-9 col-xs-12">
+						<div class="row">
+							<div class="mobile_menu">
+								<ul>
+									<div class="up">
+										<i>展开</i>
+										<span class="glyphicon glyphicon-chevron-down"></span>
+									</div>
+									<div class="active down">
+										<i>收起</i>
+										<span class="glyphicon glyphicon-chevron-up"></span>
+									</div>
+									<li v-for="(item,index) in list" :key="item.id" @click="getNum(index)">
+										{{item}}
+									</li>
+								</ul>
+							</div>
+							<div class="tab_img col-lg-7 col-md-7 col-sm-7 col-xs-12">
+								<div v-for='(itemCon,index) in tabContents' v-show="index == num" :key="index">
+									<img v-bind:src="itemCon.imgurl">
+								</div>
+							</div>
+							<div class="tab_content col-lg-3 col-md-3 col-sm-3 col-xs-12">
+								<div class="title" v-for='(itemTitle,index) in title' v-show="index == num">
+									<div><i></i>{{itemTitle}}</div>
+									<span v-for='(itemTips,index) in tips' v-show="index == num"><i class="mobile"></i><br />{{itemTips}}</span>
+								</div>
+								<i></i>
+							</div>
+							<div class="tab_menu col-lg-2 col-md-2 col-sm-2 col-xs-12">
+								<ul>
+									<li v-for="(item,index) in list" :key="item.id" @click="getNum(index)">
+										<p><i :class="{active:num==index}"></i>{{item}}</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contact_us">
+			<div class="container-fluid">
+				<ul>
+					<li>
+						地点：上海市闵行区联川路258号8A栋5层
+					</li>
+					<li>
+						邮编：201100
+					</li>
+					<li>
+						电话：021-61301505
+					</li>
+					<li>
+						邮箱：kef@shuzhanwh.com
+					</li>
+				</ul>
+			</div>
+		</div>
+		<address>
+			<span>COPYRIGHT (©) 2019 Shanghai shuzhanwenhuachuangyi  Co., Ltd.</span>
+		</address>
+		<script src="../../module/jquery-3.4.1.js" type="text/javascript"></script>
+		<script src="../../module/jquery-ui.js" type="text/javascript"></script>
+		<script src="../../module/bootstrap.js" type="text/javascript"></script>
+		<script src="../../module/jquerycookies.js" type="text/javascript"></script>
+		<script src="../../js/cookies.js" type="text/javascript"></script>
+		<script src="../../frame/vue.js" type="text/javascript"></script>
+		<script src="../../js/common.js" type="text/javascript"></script>
+		<script src="../../js/mobile.js" type="text/javascript"></script>
+		<script src="../../js/tabmethods.js" type="text/javascript"></script>
+	</body>
+</html>

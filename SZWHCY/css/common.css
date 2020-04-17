@@ -1,0 +1,196 @@
+body {
+  margin: 0 0;
+  padding: 0 0;
+  background-color: #181818;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0 0;
+  padding: 0 0;
+}
+#content {
+  margin-top: 54px;
+}
+#content .decc_logo {
+  margin-left: 5rem;
+}
+#content .text {
+  margin-top: 7rem;
+}
+#content .text .row {
+  height: 100%;
+}
+#content .text .row .ab_left {
+  background-color: #FFFFFF;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#content .text .row .ab_left img {
+  width: 140%;
+  height: 110%;
+  position: absolute;
+  margin-left: -45%;
+}
+#content .text .row .ab_left .ro_logo {
+  width: 125px;
+  height: 80px;
+  position: absolute;
+  margin-left: 50px;
+  top: 36px;
+}
+#content .text .row .ab_right {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #000000;
+  z-index: -1;
+  opacity: 1;
+}
+#content .text .row .ab_right img {
+  width: 154%;
+  height: 188%;
+  position: absolute;
+  margin-left: -38%;
+  z-index: -2;
+  top: -183px;
+}
+#content .text .row .ab_right .about_decc {
+  z-index: 1;
+  margin: 53px 208px 0 72px;
+  color: #9e9e9e;
+}
+#content .text .row .ab_right .about_decc h3 {
+  color: #FFFFFF;
+}
+#content .text .row .ab_right .about_decc h5 {
+  font-size: 1.825rem;
+  margin-bottom: 30px;
+}
+#content .text .row .ab_right .about_decc span {
+  line-height: 36px;
+  font-size: 1.6rem;
+  text-align: justify;
+}
+#contact_us ul {
+  margin-top: 89px;
+}
+#contact_us ul li {
+  margin: 0 0 1.3rem 5rem;
+  color: #939393;
+}
+address {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4.75rem;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 4.75rem;
+  color: #8c8c8c;
+}
+address span {
+  display: inline-block;
+  margin-right: 1rem;
+}
+address span a {
+  color: #8c8c8c;
+}
+address span a:hover {
+  color: #8c8c8c;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  #nav {
+    display: none;
+  }
+  .decc_logo {
+    display: none;
+  }
+  #content {
+    margin: 0 0;
+  }
+  #content .text {
+    margin: 0 0;
+  }
+  #content .text .row .ab_left {
+    height: 260px;
+    overflow: hidden;
+    margin-top: 80px;
+  }
+  #content .text .row .ab_left img {
+    width: 100%;
+    height: 100%;
+    margin: 5% 0 0 -20%;
+  }
+  #content .text .row .ab_left .ro_logo {
+    width: 100px;
+    height: 55px;
+    position: absolute;
+    margin-left: 5%;
+    top: 60%;
+  }
+  #content .text .row .ab_right {
+    display: none;
+  }
+  #content .text .row .ab_right_mobile {
+    text-align: left;
+    padding: 0 0 1px 0;
+    background-color: #2a2a2a;
+  }
+  #content .text .row .ab_right_mobile h3 {
+    text-align: center;
+    color: #FFFFFF;
+  }
+  #content .text .row .ab_right_mobile .about_decc {
+    background-color: #373737;
+    color: #9e9e9e;
+    padding-top: 1px;
+  }
+  #content .text .row .ab_right_mobile .about_decc span {
+    display: inline-block;
+    line-height: 4.25rem;
+    padding: 0 1.5625rem;
+  }
+  #content .text .row .ab_right_mobile .square {
+    display: block;
+    margin: 25px auto;
+    width: 44px;
+    height: 10px;
+    background-color: #29af9e;
+  }
+  address {
+    display: none;
+  }
+  #contact_us {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #bottom_bg,
+  #wrapper {
+    display: none;
+  }
+  #content .text .row .ab_right_mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1099px) {
+  #bottom_bg,
+  #wrapper {
+    display: none;
+  }
+  #content .text .row .ab_right_mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #bottom_bg,
+  #wrapper {
+    display: none;
+  }
+  #content .text .row .ab_right_mobile {
+    display: none;
+  }
+}

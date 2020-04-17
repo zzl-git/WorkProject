@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据墙分辨率测试</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <div id="app">
+    <div class="box" :class = '{isFirefox:isFirefoxs}' v-bind:style="styleObject">
+        <div class="text">
+            <h2 title="1cm=28.346px">请输入分辨率率</h2>
+            <div class="data">
+                <span>宽度</span>
+                <input type="text" placeholder="请输入宽" v-model ='editFrom.width'>
+            </div>
+            <div class="data">
+                <span>高度</span>
+                <input type="text" placeholder="请输入高" v-model ='editFrom.height' >
+            </div>
+            <button class="clear" @click = 'clearCache'>清除缓存</button>
+            <button @click = 'changeData'>确定</button>
+        </div>
+        <scaleplate 
+        class="topdata" 
+        :width = "scaleplateData.width"
+        weizhi = 'left'
+        v-show = 'showScaleplateBool'
+        ></scaleplate>
+        <scaleplate 
+        class="leftdata" 
+        :width = "scaleplateData.height"
+        weizhi = 'top'
+        v-show = 'showScaleplateBool'
+        ></scaleplate>
+    </div>
+   </div>
+   <script src="./js/jquery.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+    <script src="./js/scaleplate.js"></script>
+    <script>
+        var app = new Vue({
+                el: '#app',
+                data: {
+                    scaleplateData: {
+                        height: 200,
+                        width:  200
+                    },
+                    styleObject:{
+                        height: '200px',
+                        width: '200px'
+                    },
+                    editFrom: {
+                        height: 200,
+                        width:  200
+                    },
+                    showScaleplateBool: false
+                },
+                components:{
+                    scaleplate
+                },
+                computed: {
+                    isFirefoxs() {
+                        return this.myBrowser() == 'FF'
+                    }
+                   
+                }
+                ,
+                mounted(){
+                    this.getData()
+                    this.showScaleplate()
+                }
+                ,
+                methods: {
+                    showScaleplate() {
+                        if (this.editFrom.height <=200 || this.editFrom.width <=200) {
+                            this.showScaleplateBool = false
+                        }else {
+                            this.scaleplateData.height = this.editFrom.height 
+                            this.scaleplateData.width = this.editFrom.width
+                            this.showScaleplateBool = true
+                        }
+                    },
+                    isNum (data) {
+                         return typeof data !== 'number' && isNaN(data);
+                    },
+                    changeData() {
+                        if(this.editFrom.height<=200||this.editFrom.width<=200){
+                            layer.msg('宽高必须大于200');
+                        }else if(this.isNum(this.editFrom.width)||this.isNum(this.editFrom.height)) {
+                            layer.msg('请输入纯数字');
+                        }else {
+                            this.styleObject.height = this.editFrom.height + 'px'
+                            this.styleObject.width = this.editFrom.width + 'px'
+                            localStorage.setItem('boxData', JSON.stringify( this.editFrom ))
+                            this.getData()
+                            this.showScaleplate()
+                        }
+                    },
+                    getData () {
+                        let data = JSON.parse(localStorage.getItem('boxData'))
+                        if(data){
+                            this.styleObject.height = data.height + 'px'
+                            this.styleObject.width = data.width + 'px'
+                            this.editFrom = data
+                        }else {
+                           
+                        }
+                    },
+                    clearCache () {
+                        localStorage.removeItem('boxData') 
+                        this.styleObject={
+                                height: '200px',
+                                width: '200px'
+                            }
+                            this.editFrom = {
+                                height: 200,
+                                width:  200
+                            }
+                            this.showScaleplate()
+                    },
+                    myBrowser(){
+                        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+                        var isOpera = userAgent.indexOf("Opera") > -1;
+                        if (isOpera) {
+                            return "Opera"
+                        }; //判断是否Opera浏览器
+                        if (userAgent.indexOf("Firefox") > -1) {
+                            return "FF";
+                        } //判断是否Firefox浏览器
+                        if (userAgent.indexOf("Chrome") > -1){
+                    return "Chrome";
+                    }
+                        if (userAgent.indexOf("Safari") > -1) {
+                            return "Safari";
+                        } //判断是否Safari浏览器
+                        if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) {
+                            return "IE";
+                        }
+                    }
+                }
+            })
+    </script>
+</body>
+</html>

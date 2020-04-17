@@ -1,0 +1,109 @@
+.side_logo {
+  box-sizing: border-box;
+  padding-left: 3%;
+}
+.row {
+  margin: 0;
+}
+.recruit_info {
+  background-image: url("zhaopin.jpg");
+  background-position: left center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.recruit_info ul {
+  float: right;
+  height: 496px;
+  max-width: 920px;
+  background: #373737;
+  box-sizing: border-box;
+  padding: 50px 10% 0;
+  margin-bottom: 0;
+}
+.recruit_info li {
+  cursor: pointer;
+  float: left;
+  width: 33.33%;
+  color: #fff;
+}
+.recruit_info li.active h2 span {
+  color: #29af9e;
+}
+.recruit_info li > p,
+.recruit_info li > span {
+  display: none;
+}
+.recruit_info li h2 {
+  margin: 0;
+  padding: 0;
+}
+.recruit_info li h2 b {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #29af9e;
+  vertical-align: 3px;
+}
+.recruit_info li h2 span {
+  font-size: 18px;
+}
+.modal-content {
+  background: #343434;
+}
+.modal-content .modal-body {
+  color: #fff;
+  line-height: 35px;
+  padding: 0 10% 50px;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-header .modal-title {
+  font-size: 24px;
+  color: #29af9e;
+  margin-top: 30px;
+  margin-left: 72px;
+}
+.modal-header .close {
+  width: 80px;
+  height: 80px;
+  font-size: 77px;
+  background: #2b2b2b;
+  font-weight: normal;
+}
+.modal-header .close span {
+  color: #fff;
+}
+.panel {
+  background: #373737;
+  color: #fff;
+  border: none;
+  position: relative;
+}
+.panel-default > .panel-heading {
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+}
+.panel-default > .panel-heading h4 a {
+  color: #fff;
+}
+.panel-title {
+  text-align: center;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  line-height: 25px;
+  padding-bottom: 70px;
+}
+.isTrue {
+  width: 100%;
+  background: #2a2a2a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+}

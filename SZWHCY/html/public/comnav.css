@@ -1,0 +1,113 @@
+#nav {
+  border-bottom: 1px solid #303030;
+  height: 4.125rem;
+}
+#nav .logo {
+  float: left;
+  margin: 1rem 0 0 7rem;
+}
+#nav .logo img {
+  height: 2rem;
+  width: 3.125rem;
+}
+#nav .navPc {
+  float: right;
+  margin-right: 5.125rem;
+  position: relative;
+  border: none;
+  display: flex;
+  list-style: none;
+  line-height: 4.125rem;
+}
+#nav .navPc li {
+  margin: 0px;
+}
+#nav .navPc li a {
+  width: 6.5rem;
+  height: 4.125rem;
+  position: relative;
+  text-align: center;
+  line-height: 4.125rem;
+  font-size: 1rem;
+  border: none;
+  color: #8c8c8c;
+  display: inline-block;
+  text-decoration: none;
+  z-index: 3;
+}
+#nav .navPc li .active {
+  color: #FFFFFF;
+}
+#nav .slide1 {
+  background-color: #29af9e;
+  z-index: 2;
+}
+#nav .slide2 {
+  opacity: 0;
+  background: #fff;
+  z-index: 1;
+}
+#nav .slide1,
+#nav .slide2 {
+  position: absolute;
+  display: inline-block;
+  height: 2.0625rem;
+  top: 1rem;
+  border-radius: 0.9375rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1.05);
+}
+#nav .squeeze {
+  transition: all 0.5s;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+#nav *,
+#nav *::before,
+#nav *::after {
+  box-sizing: border-box;
+}
+
+#bottom_bg {
+  height: 6.75rem;
+  background-color: #191919;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+#bottom_bg .mob_logo {
+  display: inline-block;
+  width: 100%;
+  line-height: 6.75rem;
+  text-align: center;
+  background-color: #191919;
+}
+#wrapper .nav li span {
+  display: inline-block;
+  height: 0.625rem;
+  width: 1.5rem;
+  background-color: #6e6e6e;
+  margin: 0 1.6rem 0 2.6rem;
+}
+#wrapper .nav li .active {
+  background-color: #32cba9;
+  border-radius: 0;
+}
+#page-content-wrapper {
+  padding: 0 0;
+  position: relative;
+}
+#page-content-wrapper .hamburger {
+  position: fixed;
+  background-color: #191919;
+  top: 40px;
+  height: 2rem;
+  margin-top: -1rem;
+}
+#page-content-wrapper .mob_logo {
+  display: inline-block;
+  width: 100%;
+  line-height: 6.75rem;
+  text-align: center;
+  background-color: #191919;
+}

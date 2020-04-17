@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.layui-layer-content {
+    padding: 10px 20px;
+    background-color: #5FB878;
+    color: #fff;
+    font-size: 20px;
+}
+.isFirefox {
+    margin-top: -1px;
+}
+li {
+    list-style: none;
+}
+.box {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.box ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.box ul li {
+    box-sizing: border-box;
+    background-color: red;
+    cursor: pointer;
+    position: absolute;
+}
+.leftdata li {
+   
+    height: 2px;
+    width: 45px;
+    top: 0;
+}
+.topdata li {
+    width: 2px;
+    height: 45px;
+    left: 0;
+}
+.text {
+    width: 200px;
+    height: 200px;
+    margin: -100px 0 0 -100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+.text h2{
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+}
+.text span {
+    display: inline-block;
+    color: blue;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.text input {
+    text-align: center;
+    height: 20px;
+}
+.text button {
+    background-color: blue;
+    border: none;
+    color: #fff;
+    padding: 4px 10px;
+    cursor: pointer;
+    margin: 10px 5px 0;
+}
+.text .clear {
+    background-color: #f54545;
+}
