@@ -1,0 +1,118 @@
+.footer {
+  background: url("/Cloud/WebUI/img/footbgc_03.jpg");
+  hr {
+    color: #fff;
+  }
+  .foot_top {
+    background: #dedede;
+    border-bottom: 2px solid #b8aa9c;
+    ul {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    li {
+      float: left;
+      margin: 20px 10px;
+      position: relative;
+    }
+  }
+
+  .input {
+    position: relative;
+    height: 33px;
+    width: 280px;
+    background: #fff;
+    line-height: 33px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left: 8px;
+    color: #222;
+    cursor: pointer;
+  }
+  dl {
+    display: none;
+    background: #fff;
+    color: #222;
+    border-top: 2px solid #ccc;
+    position: absolute;
+    width: 280px;
+    top: 33px;
+    z-index: 9999;
+    a {
+      font-size: 14px;
+      display: inline-block;
+      width: 100%;
+      padding: 8px 0;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+    dd {
+      &:hover {
+        background: #c9a96e;
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+  em {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border: 8px solid;
+    border-color: #333 transparent transparent;
+  }
+
+  .foot_bot {
+    padding-bottom: 30px;
+    width: 1200px;
+    margin: 0 auto;
+    .info,.shaoma {
+      margin-top: 15px;
+      float: left;
+    }
+    .img {
+      img {
+        margin-top: 15px;
+      }
+    }
+    .info {
+      ul {
+        float: left;
+        &:nth-of-type(1) {
+          margin-right: 150px;
+        }
+        li {
+          font-size: 14px;
+          color: #777777;
+          margin: 20px;
+          span {
+            color: #ff8400;
+            font-size: 16px;
+          }
+        }
+        .jingwu {
+          box-sizing: border-box;
+          padding-left: 30px;
+          position: relative;
+          img {
+            position: absolute;
+            left: 0;
+            top: -3px;
+            margin-right: 50px;
+          }
+        }
+      }
+    }
+    .shaoma {
+      float: right;
+      li {
+        float: left;
+        margin: 0 7px;
+        text-align: center;
+      }
+    }
+  }
+}

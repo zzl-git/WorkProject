@@ -1,0 +1,178 @@
+.heater_bgc {
+  width: 100%;
+  height: 102px;
+  background-image: url("../../../WebUI/imgs/navBgc.png");
+  background-size: 100% 100%;
+}
+.city_box {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 150px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 338px;
+  border-radius: 6px;
+  color: #222;
+  padding-bottom: 15px;
+}
+.city_box li {
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.city_box li:first-child {
+  border-right: 1px solid #ccc;
+}
+.city_box dl {
+  float: left;
+  width: 45%;
+}
+.city_box dl:nth-child(2) {
+  width: 55%;
+}
+.city_box dl dt {
+  color: #CB5F65;
+  font-size: 16px;
+  margin: 15px 0;
+  background: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.city_box dl dd a {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 10px 5px 15px;
+  color: #8C8283;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.city_box dl dd a:hover {
+  color: #CB5F65;
+}
+.heater {
+  width: 100%;
+  height: 102px;
+  background-size: 100% 100%;
+  position: relative;
+}
+.heater .heater_cen {
+  width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+}
+.heater .logo,
+.heater .nav_box,
+.heater .login {
+  float: left;
+}
+.heater .logo {
+  height: 100%;
+  line-height: 90px;
+  margin-right: 50px;
+}
+.heater .login {
+  height: 100%;
+  line-height: 88px;
+  font-size: 10px;
+}
+.heater .login span,
+.heater .login a {
+  font-size: 10px;
+}
+.heater .login .trigger {
+  color: #F3DEDF;
+  margin: 0 5px;
+}
+.nav_box {
+  padding-right: 50px;
+  position: relative;
+}
+.nav_box > a {
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+.nav_box li {
+  float: left;
+  position: relative;
+}
+.nav_box li:first-child a {
+  color: #fff;
+  background-image: url("/Bb_Cloud/WebUI/imgs/nav_bot.png");
+  background-repeat: no-repeat;
+  background-position: center 60px;
+  border-left: 1px solid #BC454F;
+}
+.nav_box li > a {
+  border-right: 1px solid #BC454F;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 85px;
+  width: 106px;
+  height: 85px;
+  font-size: 14px;
+  color: #1f1e19;
+}
+.nav_box li > a:hover {
+  color: #fff;
+  background-image: url("/Bb_Cloud/WebUI/imgs/nav_bot.png");
+  background-repeat: no-repeat;
+  background-position: center 60px;
+}
+.nav_box li dl {
+  display: none;
+  background: #EBDEBB;
+  position: absolute;
+  top: 100px;
+  min-width: 106px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 2px solid #BC454F;
+}
+.nav_box li dl dd {
+  width: 100%;
+  margin: 3px 0;
+}
+.nav_box li dl dd a {
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  display: block;
+  box-sizing: border-box;
+  padding: 3px 15px;
+  width: 100%;
+  text-align: center;
+}
+.nav_box li dl dd a:hover {
+  background: #fff;
+  color: #BC454F;
+}
+.nav_box .search {
+  display: none;
+  position: absolute;
+  line-height: 41px;
+  width: 351px;
+  border-radius: 4px;
+  background: #fff;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav_box .search input {
+  border-radius: 4px;
+  height: 41px;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 314px;
+}
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,124 @@
+.content {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+}
+.tabs {
+  position: absolute;
+  top: 88px;
+  width: 1137px;
+  left: 50%;
+  margin-left: -568.5px;
+}
+.tabs li {
+  float: left;
+  width: 309px;
+  height: 135px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  margin: 0 35px;
+  line-height: 135px;
+  text-align: center;
+  font-size: 35.5px;
+  letter-spacing: 1.8px;
+  color: #666666;
+  cursor: pointer;
+}
+.tabs li.active {
+  background-color: #00afff;
+  color: #fff;
+}
+.navTabs {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.navTabs li {
+  width: 65px;
+  height: 209px;
+  background-color: #e5e5e5;
+  border-radius: 0px 10px 10px 0px;
+}
+.navTabs li span {
+  display: inline-block;
+  width: 30px;
+  font-family: MicrosoftYaHei-Bold;
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #ffffff;
+}
+.navTabs li span i {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transform: rotate(25deg);
+  font-size: 0;
+  margin: 2px 0;
+}
+.navTabs li.active {
+  width: 74px;
+  height: 238px;
+  background-color: #f16363;
+  box-shadow: 0px 4px 10px 0px rgba(4, 0, 0, 0.15);
+  border-radius: 0px 10px 10px 0px;
+}
+.navTabs li.active span {
+  width: 36px;
+  font-size: 36px;
+  color: #ffffff;
+}
+.navTabs li.active span i {
+  width: 33px;
+}
+.navLi {
+  position: absolute;
+  top: 263px;
+  right: 78px;
+  width: 304px;
+  height: 603px;
+  background-color: #dcdcdc;
+  border: solid 1px #dcdcdc;
+}
+.navLi h2 {
+  height: 68px;
+  background-color: #00afff;
+  font-family: MicrosoftYaHei-Bold;
+  line-height: 68px;
+  padding-left: 46px;
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+.navLi .area {
+  height: 535px;
+  overflow: hidden;
+  position: relative;
+}
+.navLi .area .area_info {
+  font-family: MicrosoftYaHei;
+  font-size: 22px;
+  letter-spacing: 1.1px;
+  color: #6e6e6e;
+  padding-left: 46px;
+}
+.zhibeizhen {
+  position: absolute;
+  top: 285px;
+  right: 549px;
+}
+.biaoshi {
+  position: absolute;
+  bottom: 60px;
+  right: 443px;
+}
+.imgBox {
+  position: absolute;
+  top: 375px;
+  left: 200px;
+}

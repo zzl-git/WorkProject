@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>楼层分布</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        .swiper-n2 {
+            height: 100%;
+        }
+        .swiper-slide {
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="tabs">
+                <ul class="cf">
+                    <li class="active">
+                        一楼分布
+                    </li>
+                    <li>
+                        二楼分布
+                    </li>
+                    <li>
+                        三楼分布
+                    </li>
+                </ul>
+            </div>
+            <div class="navTabs">
+                <ul>
+                    <li class="active">
+                        <span>一号楼</span>
+                    </li>
+                    <li>
+                        <span>二三号楼</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 指北针 -->
+            <div class="zhibeizhen">
+                <img src="./imgs/icon/jiantou.png" />
+            </div>
+            <!-- 标识 -->
+            <div class="biaoshi">
+                <img src="./imgs/icon/biaoshi.png" alt="">
+            </div>
+            <!-- 区域名称 -->
+            <div class="navLi">
+                <h2>区域名称</h2>
+                <div class="area swiper-container">
+                    <div class="pagination-nested2 pagination-n2"></div>
+                    <div class="swiper-wrapper" id="area">
+                        <div class="swiper-slide">jQuery插件库 1</div>
+                        <div class="swiper-slide">jQuery插件库 2</div>
+                        <div class="swiper-slide">jQuery插件库 3</div>
+                        <div class="swiper-slide">jQuery插件库 4</div>
+                        <div class="swiper-slide">jQuery插件库 5</div>
+                        <div class="swiper-slide">jQuery插件库 6</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 地图显示 -->
+            <div class="imgBox">
+                <img src="./imgs/oneFloor/1.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="js/idangerous.swiper-1.9.1.min.js"></script>
+	<script src="js/idangerous.swiper.scrollbar-1.2.js"></script>
+    <script>
+       $(function(){
+           var count = 0
+           var newcount = 8
+            function initSwiper () {
+                var swiperN2 = $('.area').swiper({
+                    pagination: '.pagination-n2',
+                    slidesPerSlide:  newcount,
+                    mode: 'vertical'
+                });
+            }
+
+        var oneFloor =[
+            {
+                list: [{
+                items:['直饮水','贵宾室','多功能展厅','男更衣室','女更衣室','活动大厅'],
+                style:['#C0FBE5','#E1C3F8','#C3F9C5','#FEA9B4','#FAF5C6',"#C1C2C2"]
+            },{
+                items:['直饮水','曲艺排练厅','琴房','器乐排练厅','小品排练厅','滚灯艺术团办公室','培训教室','琴房','男更衣室','女更衣室','男淋浴房','女淋浴房'],
+                style:['#C0FBE5','#E6F0F7','#FECBD1','#6AF7C3','#3AF348',"#F6FAC6"
+                    ,'#AB3FEE','#F7E7F5','#A5F1A8','#D4FBFF','#E6F7E7',"#FFDDB7"]
+            },{
+                items:['直饮水','文印区','会议室','视听区','办公室','水吧区','贵宾室','馆长办公室','副馆长办公室','办公室','休闲区','VIP接待室'],
+                style:['#A2F1E8','#3EE7F3','#FBBB78','#C4E9FA','#C4FBE7',"#F0E6F6"
+                    ,'#F7F0E7','#FDCBED','#2E96F1','#F5E54D','#F6F7E7',"#BAF9BC"]
+            }]
+            },
+            {
+                list: [{
+                    items:['数字化体验区','视频体验室','音频体验室','艺术剧场','合唱培训教室','演讲培训教室','戏曲培训教室'],
+                    style:['#67CF8B','#F2F5F6','#91D7CF','#F06065','#DCFDE0',"#4BC4D2","#CFCA3F"]
+                },{
+                    items:['民间技艺教室','录音棚','美术教室','书法教室','摄影教室','服装间','库房','档案室'],
+                    style:['#E5DD96','#91C0E4','#6E72CA','#BC68B5','#4754FA',"#96E5E5"
+                        ,'#B3EAB2','#DF7075']
+                },{
+                    items:['静态艺术展示厅','文学创作室','文化艺术客厅','茶水间'],
+                    style:['#6AB0AA','#8FB8D9','#96CE52','#54F3FE']
+                }]
+            }
+        ]
+            
+        
+        function runFloor (floor,Num,floorNum){
+             var html1 = ''
+             var itemLen =floor[floorNum].list[Num].items
+             if (Num !==0 &&floorNum ===0) {
+                newcount =12
+             }else {
+                newcount = 8
+             }
+             for(var i =0;i < itemLen.length;i++){
+                html1 += '<div class="swiper-slide area_info" style="background:'+floor[count].list[Num].style[i]+';line-height:'+(newcount ==12?44.58:68)+'px">'+(i+1)+'. '+(floor[count].list[Num].items[i])+'</div>'
+             }
+            $('#area').html(html1)
+            initSwiper()
+        }
+        // 默认
+        runFloor(oneFloor,0,count)
+
+        $('.tabs li').click(function(){
+          var indLi =  $(this).index()
+          $(this).addClass('active').siblings('li').removeClass('active')
+         if (count ==0){
+            $('.imgBox img').attr('src','./imgs/oneFloor/'+(indLi+1)+'.png')
+         }else {
+            $('.imgBox img').attr('src','./imgs/twoFloor/'+(indLi+1)+'.png')
+         }
+          runFloor(oneFloor,indLi,count)
+          initSwiper()
+        })
+                //    navTabs
+            $('.navTabs li').click(function(){
+                var indLis =  $(this).index()
+                $(this).addClass('active').siblings('li').removeClass('active')
+                $('.tabs li:eq(0)').addClass('active').siblings('li').removeClass('active')
+                count =indLis
+                if (count ==0){
+                    $('.imgBox img').attr('src','./imgs/oneFloor/'+1+'.png')
+                }else {
+                    $('.imgBox img').attr('src','./imgs/twoFloor/'+1+'.png')
+                }
+                runFloor(oneFloor,0,count)
+                initSwiper()
+            })
+       })
+    </script>
+</body>
+</html>

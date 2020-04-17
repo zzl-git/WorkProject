@@ -1,0 +1,238 @@
+@mainClole:#c9a96e;
+#header_com {
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+}
+.header {
+  background: rgba(0,0,0,.4);
+  hr {
+    margin: 0;
+    height: 0;
+  }
+}
+.header_top {
+  margin: 0 auto;
+  height: 95px;
+  line-height: 95px;
+  ul {
+    float: right;
+    li {
+      float: left;
+      margin-left: 20px;
+      color: #fff;
+      a{
+        color: #fff;
+      }
+      span {
+        margin-left: 8px;
+      }
+      &:nth-child(1){
+        a {
+          display: inline-block;
+          font-size: 18px;
+          transform: rotate(90deg);
+          margin-left: 8px;
+          line-height: 7px;
+        }
+      }
+      &:nth-child(2){
+        a {
+          padding: 0 10px;
+          &:first-child {
+            border-right: 2px solid #ccc;
+          }
+        }
+      }
+    }
+
+  }
+}
+.header_nav {
+  width: 100%;
+  height: 65px;
+  text-align: center;
+  >a{
+   position: absolute;
+    height: 100%;
+    line-height: 65px;
+  }
+  ul {
+    float: left;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  li {
+    position: relative;
+    float: left;
+    &.active {
+      >a {
+        color: #c9a96e;
+        border-bottom: 4px solid #c9a96e;
+      }
+    }
+
+    >a {
+      box-sizing: border-box;
+      padding: 0 10px;
+      margin: 0 15px;
+      color: #fff;
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      font-size: 18px;
+      &:hover {
+        color: #c9a96e;
+        border-bottom: 4px solid #c9a96e;
+      }
+    }
+    dl {
+      display: none;
+      position: absolute;
+      top: 80px;
+      border: 2px solid @mainClole;
+      background: rgba(0,0,0,.5);
+      width: 100%;
+      a {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+        color: #fff;
+        word-break:keep-all;       /* 不换行 */
+        white-space:nowrap;
+        margin: 3px 0;
+        &:hover {
+          background: @mainClole;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.xuanfu {
+  text-align: left;
+  position: absolute;
+  background: url("/Cloud/WebUI/img/serBgc_03.jpg");
+  height: 539px;
+  width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  h3 {
+    height: 79px;
+    line-height: 79px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    border-bottom: 1px solid #c9a96e;
+    a{
+      display: inline-block;
+      width: 74px;
+      height: 33px;
+      background-color: #c9a96e;
+      border-radius: 2px;
+      text-align: center;
+      line-height: 33px;
+      color: #fff;
+    }
+  }
+}
+.search{
+  display: none;
+  margin-top: -60px;
+  opacity: 0;
+  .input_box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 44px;
+    background-color: #ffffff;
+    line-height: 44px;
+    border: solid 1px #c9a96e;
+    a {
+      float: right;
+      width: 90px;
+      box-sizing: border-box;
+      text-align: center;
+      border-left: solid 1px #c9a96e;
+    }
+    input {
+      width: 510px;
+      box-sizing: border-box;
+      padding-left: 28px;
+      font-size: 18px;
+      letter-spacing: 3.6px;
+      color: #aaaaaa;
+    }
+  }
+}
+.city_box{
+  display: none;
+  &.xuanfu {
+    height: auto;
+  }
+  dl {
+    margin-left: 60px;
+    margin-top: 30px;
+    dt {
+      position: absolute;
+      margin-left: -44px;
+      margin-top: -2px;
+      p {
+        color: #333;
+        font-size: 14px;
+      }
+    }
+    dd {
+      float: left;
+      margin-bottom: 13px;
+      a{
+        display: inline-block;
+        padding: 0 15px;
+        height: 26px;
+        border-radius: 2px;
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        color: #333333;
+        margin: 0 13px;
+        text-align: center;
+        line-height: 26px;
+      }
+      &:hover {
+       a {
+         background-color: #c9a96e;
+         color: #fff;
+       }
+      }
+      &.active {
+        a {
+          background-color: #c9a96e;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .city_bot{
+    display: table;
+    margin: 60px auto 50px;
+    a {
+      display: inline-block;
+      width: 112px;
+      height: 33px;
+      background-color: #c9a96e;
+      border-radius: 2px;
+      text-align: center;
+      line-height: 33px;
+      font-size: 16px;
+      letter-spacing: 3.2px;
+      color: #ffffff;
+      margin: 0 20px;
+      &:nth-child(1) {
+        background: none;
+        color: #333;
+      }
+    }
+  }
+}

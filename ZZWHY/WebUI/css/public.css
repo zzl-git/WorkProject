@@ -1,0 +1,338 @@
+#header_com {
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+}
+.header {
+  background: rgba(0, 0, 0, 0.4);
+}
+.header hr {
+  margin: 0;
+  height: 0;
+}
+.header_top {
+  margin: 0 auto;
+  height: 95px;
+  line-height: 95px;
+}
+.header_top ul {
+  float: right;
+}
+.header_top ul li {
+  float: left;
+  margin-left: 20px;
+  color: #fff;
+}
+.header_top ul li a {
+  color: #fff;
+}
+.header_top ul li span {
+  margin-left: 8px;
+}
+.header_top ul li:nth-child(1) a {
+  display: inline-block;
+  font-size: 18px;
+  transform: rotate(90deg);
+  margin-left: 8px;
+  line-height: 7px;
+}
+.header_top ul li:nth-child(2) a {
+  padding: 0 10px;
+}
+.header_top ul li:nth-child(2) a:first-child {
+  border-right: 2px solid #ccc;
+}
+.header_nav {
+  width: 100%;
+  height: 65px;
+  text-align: center;
+}
+.header_nav > a {
+  position: absolute;
+  height: 100%;
+  line-height: 65px;
+}
+.header_nav ul {
+  float: left;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header_nav li {
+  position: relative;
+  float: left;
+}
+.header_nav li.active > a {
+  color: #c9a96e;
+  border-bottom: 4px solid #c9a96e;
+}
+.header_nav li > a {
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: 0 15px;
+  color: #fff;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+}
+.header_nav li > a:hover {
+  color: #c9a96e;
+  border-bottom: 4px solid #c9a96e;
+}
+.header_nav li dl {
+  display: none;
+  position: absolute;
+  top: 80px;
+  border: 2px solid #c9a96e;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.header_nav li dl a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  color: #fff;
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  margin: 3px 0;
+}
+.header_nav li dl a:hover {
+  background: #c9a96e;
+  color: #fff;
+}
+.xuanfu {
+  text-align: left;
+  position: absolute;
+  background: url("/Cloud/WebUI/img/serBgc_03.jpg");
+  height: 539px;
+  width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.xuanfu h3 {
+  height: 79px;
+  line-height: 79px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  border-bottom: 1px solid #c9a96e;
+}
+.xuanfu h3 a {
+  display: inline-block;
+  width: 74px;
+  height: 33px;
+  background-color: #c9a96e;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 33px;
+  color: #fff;
+}
+.search {
+  display: none;
+  margin-top: -60px;
+  opacity: 0;
+}
+.search .input_box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 44px;
+  background-color: #ffffff;
+  line-height: 44px;
+  border: solid 1px #c9a96e;
+}
+.search .input_box a {
+  float: right;
+  width: 90px;
+  box-sizing: border-box;
+  text-align: center;
+  border-left: solid 1px #c9a96e;
+}
+.search .input_box input {
+  width: 510px;
+  box-sizing: border-box;
+  padding-left: 28px;
+  font-size: 18px;
+  letter-spacing: 3.6px;
+  color: #aaaaaa;
+}
+.city_box {
+  display: none;
+}
+.city_box.xuanfu {
+  height: auto;
+}
+.city_box dl {
+  margin-left: 60px;
+  margin-top: 30px;
+}
+.city_box dl dt {
+  position: absolute;
+  margin-left: -44px;
+  margin-top: -2px;
+}
+.city_box dl dt p {
+  color: #333;
+  font-size: 14px;
+}
+.city_box dl dd {
+  float: left;
+  margin-bottom: 13px;
+}
+.city_box dl dd a {
+  display: inline-block;
+  padding: 0 15px;
+  height: 26px;
+  border-radius: 2px;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  color: #333333;
+  margin: 0 13px;
+  text-align: center;
+  line-height: 26px;
+}
+.city_box dl dd:hover a {
+  background-color: #c9a96e;
+  color: #fff;
+}
+.city_box dl dd.active a {
+  background-color: #c9a96e;
+  color: #fff;
+}
+.city_box .city_bot {
+  display: table;
+  margin: 60px auto 50px;
+}
+.city_box .city_bot a {
+  display: inline-block;
+  width: 112px;
+  height: 33px;
+  background-color: #c9a96e;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 33px;
+  font-size: 16px;
+  letter-spacing: 3.2px;
+  color: #ffffff;
+  margin: 0 20px;
+}
+.city_box .city_bot a:nth-child(1) {
+  background: none;
+  color: #333;
+}
+.footer {
+  background: url("/Cloud/WebUI/img/footbgc_03.jpg");
+}
+.footer hr {
+  color: #fff;
+}
+.footer .foot_top {
+  background: #dedede;
+  border-bottom: 2px solid #b8aa9c;
+}
+.footer .foot_top ul {
+  width: 1200px;
+  margin: 0 auto;
+}
+.footer .foot_top li {
+  float: left;
+  margin: 20px 10px;
+  position: relative;
+}
+.footer .input {
+  position: relative;
+  height: 33px;
+  width: 280px;
+  background: #fff;
+  line-height: 33px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-left: 8px;
+  color: #222;
+  cursor: pointer;
+}
+.footer dl {
+  display: none;
+  background: #fff;
+  color: #222;
+  border-top: 2px solid #ccc;
+  position: absolute;
+  width: 280px;
+  top: 33px;
+  z-index: 9999;
+}
+.footer dl a {
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+  padding: 8px 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.footer dl dd:hover {
+  background: #c9a96e;
+}
+.footer dl dd:hover a {
+  color: #fff;
+}
+.footer em {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  width: 0;
+  height: 0;
+  border: 8px solid;
+  border-color: #333 transparent transparent;
+}
+.footer .foot_bot {
+  padding-bottom: 30px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.footer .foot_bot .info,
+.footer .foot_bot .shaoma {
+  margin-top: 15px;
+  float: left;
+}
+.footer .foot_bot .img img {
+  margin-top: 15px;
+}
+.footer .foot_bot .info ul {
+  float: left;
+}
+.footer .foot_bot .info ul:nth-of-type(1) {
+  margin-right: 150px;
+}
+.footer .foot_bot .info ul li {
+  font-size: 14px;
+  color: #777777;
+  margin: 20px;
+}
+.footer .foot_bot .info ul li span {
+  color: #ff8400;
+  font-size: 16px;
+}
+.footer .foot_bot .info ul .jingwu {
+  box-sizing: border-box;
+  padding-left: 30px;
+  position: relative;
+}
+.footer .foot_bot .info ul .jingwu img {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  margin-right: 50px;
+}
+.footer .foot_bot .shaoma {
+  float: right;
+}
+.footer .foot_bot .shaoma li {
+  float: left;
+  margin: 0 7px;
+  text-align: center;
+}
+/*# sourceMappingURL=public.css.map */

@@ -1,0 +1,614 @@
+html {
+    color: #292929;
+    font-size: 1em;
+    line-height: 1.4;
+    background: #626262;
+}
+
+::-moz-selection {
+    background: #fff;
+    text-shadow: none;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #999999;
+    margin: 1em 0;
+    padding: 0;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: unset;
+}
+a {
+    color: #333;
+    text-decoration: none;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+
+}
+a:focus {
+    outline: none;
+}
+a:hover {
+    text-decoration: none;
+}
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body,p,div, html, h1, h2, h3, h4, h5, h6, a, ul, li{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: 'Microsoft YaHei UI';
+    background: #fff;
+
+    margin: 0;
+    padding: 0;
+}
+iframe{
+    border: none;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.pos-rel{
+    position: relative;
+}
+.pos-abs{
+    position: absolute;
+}
+.pos-fix{
+    position: fixed;
+}
+.full-width{
+    width: 100%;
+    max-width: 1440px;
+    min-width: 1200px;
+}
+.full-height{
+    height: 100%;
+}
+.full-size{
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+.dis-lineblock{
+    display: inline-block;
+}
+.my-button {
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 1em;
+    /* padding-top: 0.8rem; */
+    padding-bottom: 0.8rem;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.center-vh{
+    /*
+        height: 100%;
+        width: 100%;
+    */
+    /* width needed for Firefox */
+
+    /* old flexbox - Webkit and Firefox. For backwards compatibility */
+    display: -webkit-box; display: -moz-box;
+    /* middle-aged flexbox. Needed for IE 10 */
+    display: -ms-flexbox;
+    /* new flexbox. Chrome (prefix), Opera, upcoming browsers without */
+    display: -webkit-flex;
+    display: flex;
+
+    /* old flexbox: box-* */
+    -webkit-box-align: center; -moz-box-align: center;
+    /* middle flexbox: flex-* */
+    -ms-flex-align: center;
+    /* new flexbox: various property names */
+    -webkit-align-items: center;
+    align-items: center;
+
+
+    -webkit-box-pack: center; -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.pos-top{
+    top:0;
+}
+.pos-left{
+    left: 0;
+}
+.pos-right{
+    right: 0;
+}
+.pos-bottom{
+    bottom: 0;
+}
+.relh100{
+    position:relative; height: 100%;
+}
+/* Make page full width so reset foundation restriction on max-width*/
+.row{
+    /*    width: 100%;*/
+    max-width: 100%;
+}
+
+
+ul, li{
+    list-style: none outside none;
+    margin: 0;
+}
+
+.full-width{
+    width: 100%;
+    max-width: 100%;
+
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fullscreen-width{
+    width: 100%;
+    max-width: 100%;
+}
+.table{
+    display: table;
+    height: inherit;
+    margin: auto;
+}
+.table-cell{
+    display: table-cell;
+    /*    height: inherit;*/
+    vertical-align: middle;
+}
+.align-center{
+    text-align: center;
+}
+.align-left{
+    text-align: left;
+}
+.align-right{
+    text-align: right;
+}
+.align-justify{
+    text-align: justify;
+}
+/*
+.mask{
+    position: relative;
+}
+*/
+
+/** 0. color Color */
+.mask:before
+{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    opacity: 0.8;
+    /*    z-index: 10;*/
+}
+.title.bg-red,
+.bg-red,
+.mask-red:before{
+    background: #e51c23;
+}
+.title.bg-yellow,
+.bg-yellow,
+.mask-yellow:before{
+    background: #ffeb3b;
+}
+.title.bg-blue,
+.bg-blue,
+.mask-blue:before{
+    background: #5677fc;
+}
+.title.bg-pink,
+.bg-pink,
+.mask-pink:before{
+    background: #e91e63;
+}
+.title.bg-green,
+.bg-green,
+.mask-green:before{
+    background: #259b24;
+}
+.title.bg-white,
+.bg-white,
+.mask-white:before{
+    background: #fff;
+}
+.title.bg-black,
+.bg-black,
+.mask-black:before{
+    background: #1f1f1f;
+}
+.title.bg-orange,
+.bg-orange,
+.mask-orange:before{
+    background: #ff9800;
+    /*    background: #ef6c00;*/
+}
+.title.bg-purple,
+.bg-purple,
+.mask-purple:before{
+    background: #9c27b0;
+}
+.title.bg-lime,
+.bg-lime,
+.mask-lime:before{
+    background: #cddc39;
+}
+.title.bg-bluegrey,
+.bg-bluegrey,
+.mask-bluegrey:before{
+    background: #607d8b;
+}
+
+.title.bg-bluegreylight,
+.bg-bluegreylight,
+.mask-bluegreylight:before{
+    background: #f0f0f0;
+}
+.title.bg-bluegreydark,
+.bg-bluegreydark,
+.mask-bluegreydark:before{
+    background: #37474f;
+}
+.title.bg-indigo,
+.bg-indigo,
+.mask-indigo:before{
+    background: #3f51b5;
+}
+.title.bg-black,
+.bg-black,
+.mask-black:before{
+    background: #000;
+}
+.title.bg-black1,
+.bg-black1,
+.mask-black1:before{
+    background: #333;
+}
+.title.bg-amber,
+.bg-amber,
+.mask-amber:before{
+    background: #ffc107;
+}
+
+.text-white{
+    color: #fff;
+}
+.text-black{
+    color: #333333;
+}
+.text-bold{
+    font-weight: bold;
+}
+.text-red{
+    color: #e51c23;
+}
+.text-blue{
+    color: #455ede;
+}
+.text-orange{
+    color: #ff9800;
+}
+.text-yellow{
+    color: #ffd600;
+}
+.text-amber{
+    color: #ffc107;
+}
+.text-pink{
+    color: #e91e63;
+}
+.text-lightblue{
+    color: #03a9f4;
+}
+
+.small-col-20{
+    width: 20%;
+}
+.box-shadow {
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.2),
+    0 0 4px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.2),
+    0 0 4px 1px rgba(0,0,0,0.1);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.2),
+    0 0 4px 1px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.2),
+    0 0 4px 1px rgba(0,0,0,0.1);
+}
+
+/* Viewport visibility animation  */
+.hidden{
+    opacity:0;
+    -webkit-transition: 0.6s;
+    -ms-transition: 0.6s;
+    transition: 0.6s;
+}
+.visible{
+    opacity:1;
+    -ms-transition: 0.6s;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+.invisible{
+    display: none !important;
+}
+.s-visible-medium-up{
+    opacity:0;
+}
+strong,
+.bold{
+    font-weight: bold;
+}
+.column, .columns{
+    padding: 0;
+}
+.row .row{
+    margin: 0;
+}
+
+
+/*公用样式*/
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, input, textarea, p, th, td, label, span, a {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", Arial, \5B8B\4F53, sans-serif;
+}
+
+fieldset, img, input {
+    border: 0 none;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+input:focus {
+    outline: none;
+}
+
+.radio {
+    margin: 4px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    _margin: 7px 0 0 4px;
+    _vertical-align: baseline;
+}
+
+.checkbox {
+    margin: 4px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    _margin: 12px 4px 0 4px;
+    _vertical-align: baseline;
+}
+
+a {
+    text-decoration: none;
+}
+
+a1 {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 999;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.cursorm {
+    cursor: move;
+}
+
+.weight {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.fleft {
+    float: left
+}
+
+.fright {
+    float: right
+}
+
+.fnone {
+    float: none;
+}
+
+.fclear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.tleft {
+    text-align: left
+}
+
+.tright {
+    text-align: right
+}
+
+.tcenter {
+    text-align: center
+}
+
+.hidden {
+    display: none;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.nobg {
+    background: none;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.noborder {
+    border: 0;
+}
+
+.clear {
+    clear: both
+}
+
+a {
+    blr: expression(this.onFocus=this.blur());
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.layui-fluid {
+    padding: 0;
+}
+
+.transTime {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+
