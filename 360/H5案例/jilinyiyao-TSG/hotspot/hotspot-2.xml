@@ -1,0 +1,350 @@
+<krpano>
+
+    <!--核心参数，不做改动-->
+    <action name="draglayer_text">
+		if(%1 != dragging,
+			copy(drag_currenty, y);
+			copy(drag_stagey, mouse.stagey);
+			draglayer_text(dragging,%2);
+		  ,
+			if(pressed,
+				sub(dy, mouse.stagey, drag_stagey);
+				add(y1, drag_currenty, dy);
+				add(y2, y1, pixelheight);
+				sub(y2, %2);
+				if(y1 GT 0, set(y1,0));
+				if(y2 LT 0, sub(y1,y2));
+				copy(y,y1);
+				delayedcall(0, draglayer_text(dragging,%2) );
+			  );
+		  );
+	</action>
+
+    <action name="picture_resize">
+
+	div(aspect, layer[%1].imagewidth, layer[%1].imageheight);
+	mul(new_width, layer[get(layer[%1].parent)].width, 0.9);<!-- 显示图片比例 -->
+	div(new_height, new_width, aspect);
+	mul(max_height, layer[get(layer[%1].parent)].height, 0.9);<!-- 显示图片比例 -->
+	if(new_height GT max_height,
+		copy(new_height, max_height);
+		mul(new_width, new_height, aspect);
+	  );
+	roundval(new_width);
+	roundval(new_height);
+	copy(layer[%1].width, new_width);
+	copy(layer[%1].height, new_height);
+   </action>
+
+   <action name="picture_resize_stage">	
+	div(aspect, layer[%1].imagewidth, layer[%1].imageheight);
+	mul(new_width, stagewidth, 0.8); <!-- 放大图片比例 -->
+	div(new_height, new_width, aspect);
+	mul(max_height, stageheight, 0.8);<!-- 放大图片比例 -->
+	if(new_height GT max_height,
+		copy(new_height, max_height);
+		mul(new_width, new_height, aspect);
+	  );
+	roundval(new_width);
+	roundval(new_height);
+	copy(layer[%1].width, new_width);
+	copy(layer[%1].height, new_height);
+    </action>
+    <!--核心参数，不做改动-->
+
+
+	<!-- 开始 -->
+
+	<!--弹出框属性-->
+	<layer name="textbox_2"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_2" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="触摸屏读报刊借阅一体机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_2"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_2" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_2].visible,false);stopsound(bggsnd27);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_2" type="container" align="leftbottom" x="2.5%" y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+        <layer name="pic_2" url="%SWFPATH%/hotspot/7.png" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		<!--文本属性-->
+		<layer name="textmask_2" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="230" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		
+		<layer name="text_2" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+	    border="false" background="false"
+		css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:18px;"
+		html="data:testtext_2"			       
+		/><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+		
+        </layer>
+	
+	<data name="testtext_2">       　　触摸屏读报刊借阅一体机，可以阅读全国各地主流电子报纸资源，视频、图片、文档全格式支持，报纸页面字体可自由放大、缩小，触屏即可翻页，方便人们了解世界各地新闻动态。
+	</data>
+	<!-- 结束 -->
+
+	 <!--弹出框属性-->
+        <layer name="textbox_3"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_3" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="参考咨询服务台"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_3"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_3" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_3].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_3" type="container" align="center" x="0" y="0" width.normal="220" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_9" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:15px;"
+			       html="data:testtext_3"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_3">
+       　　为您提供服务引导、解答咨询、读者证办理等服务。
+	</data>
+	<!-- 结束 -->
+
+	<!-- 开始 -->
+
+	<!--弹出框属性-->
+	<layer name="textbox_4"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_4" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="自助借还书机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_4"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_4" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_4].visible,false);stopsound(bggsnd24);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_4" type="container" align="leftbottom" x="2.5%" y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_4" url="%SWFPATH%/hotspot/5.png" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+	<!--文本属性-->
+		<layer name="textmask_4" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="230" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		
+		<layer name="text_4" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+	    border="false" background="false"
+		css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16px;"
+		html="data:testtext_4"			       
+		/><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+    </layer>
+	
+	<data name="testtext_4">
+　　位于总服务台处的“自助借还书机”，为读者提供了自助服务平台。该机系统采用先进的无线射频识别技术（RFID），通过射频信号自动识别图书上的电子标签，进行信息管理，实现全自助式书目查询、借书、还书、续借等项目。可同时借还10本图书，赶紧体验一下自己动手的快乐吧！
+
+	</data>
+	<!-- 结束 -->
+	
+	
+	
+
+	<!-- 开始 -->
+
+	<!--弹出框属性-->
+	<layer name="textbox_5"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_5" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="电子书借阅机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_5"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_5" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_5].visible,false);stopsound(bggsnd25);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_5" type="container" align="leftbottom" x="2.5%" y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_5" url="%SWFPATH%/hotspot/4.png" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		
+		<!--文本属性-->
+		<layer name="textmask_5" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="230" height="290" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_5" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="10" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16px;"
+			       html="data:testtext_5"			       
+			       /><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+    </layer>
+	
+	<data name="testtext_5">
+　　大厅中央处的电子书借阅机，是专业移动阅读平台，用户可在手机、平板电脑等移动设备上通过扫描电子图书二维码下载保存正版电子图书。 该机定时进行数据更新，可为读者提供电子图书3000余册。想想可以免费下载这么多电子书慢慢阅览，幸福感不要太爆棚呦！。
+	</data>
+	<!-- 结束 -->
+	
+
+	<!-- 开始 -->
+	<!--弹出框属性-->
+	<layer name="textbox_6"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_6" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="检索机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_6"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_6" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_6].visible,false);stopsound(bggsnd28);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_6" type="container" align="leftbottom" x="2.5%"  y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_6" url="%SWFPATH%/hotspot/6.png" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		<!--文本属性-->
+		<layer name="textmask_6" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="220" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		<layer name="text_6" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16px;"
+			       html="data:testtext_6"			       
+			       /><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+		
+    </layer>
+	
+	<data name="testtext_6">      　　检索机分布于各楼层。想看的书找不到？书架这么多，想要的图书藏在哪里？可以试试用检索机来帮忙，它会告诉你详细的索书号及图书的具体位置，查找起来真的更方便快捷呢！读者还可以在检索机上查询借阅信息、续借图书等，这么方便，要多加利用呀！
+	</data>
+	<!-- 结束 -->
+	
+	
+	
+	<!-- 移动端设置 -->
+	<krpano devices="mobile">
+   
+	 <layer name="textbox_2" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_2" width="50" height="50" >
+		<layer name="button_close_2"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_2" >
+		<layer name="text_2" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>	
+
+	 
+
+	 <layer name="textbox_4" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_4" width="50" height="50" >
+		<layer name="button_close_4"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_4" >
+		<layer name="text_4" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>
+	 
+	 
+	 
+
+	 <layer name="textbox_5" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_5" width="50" height="50" >
+		<layer name="button_close_5"  width="45" height="45" />
+		</layer>	
+		<!--文字缩小-->
+		<layer name="textmask_5" >
+		<layer name="text_5" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>
+	 
+	 
+	 
+
+	 <layer name="textbox_6" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_6" width="50" height="50" >
+		<layer name="button_close_6"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_6" >
+		<layer name="text_6" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>
+	 
+	 
+	 
+
+     <layer name="textbox_3" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_3" width="50" height="50" >
+		<layer name="button_close_3"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_3" y="-5%" >
+			<layer name="text_3" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+
+	</krpano>
+    <!-- 移动端设置 -->
+
+</krpano>
