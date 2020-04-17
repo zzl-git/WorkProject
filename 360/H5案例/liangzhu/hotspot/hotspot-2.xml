@@ -1,0 +1,974 @@
+<krpano>
+
+    <!--核心参数，不做改动-->
+    <action name="draglayer_text">
+		if(%1 != dragging,
+			copy(drag_currenty, y);
+			copy(drag_stagey, mouse.stagey);
+			draglayer_text(dragging,%2);
+		  ,
+			if(pressed,
+				sub(dy, mouse.stagey, drag_stagey);
+				add(y1, drag_currenty, dy);
+				add(y2, y1, pixelheight);
+				sub(y2, %2);
+				if(y1 GT 0, set(y1,0));
+				if(y2 LT 0, sub(y1,y2));
+				copy(y,y1);
+				delayedcall(0, draglayer_text(dragging,%2) );
+			  );
+		  );
+	</action>
+
+    <action name="picture_resize">
+
+	div(aspect, layer[%1].imagewidth, layer[%1].imageheight);
+	mul(new_width, layer[get(layer[%1].parent)].width, 0.9);<!-- 显示图片比例 -->
+	div(new_height, new_width, aspect);
+	mul(max_height, layer[get(layer[%1].parent)].height, 0.9);<!-- 显示图片比例 -->
+	if(new_height GT max_height,
+		copy(new_height, max_height);
+		mul(new_width, new_height, aspect);
+	  );
+	roundval(new_width);
+	roundval(new_height);
+	copy(layer[%1].width, new_width);
+	copy(layer[%1].height, new_height);
+   </action>
+
+   <action name="picture_resize_stage">	
+	div(aspect, layer[%1].imagewidth, layer[%1].imageheight);
+	mul(new_width, stagewidth, 0.8); <!-- 放大图片比例 -->
+	div(new_height, new_width, aspect);
+	mul(max_height, stageheight, 0.8);<!-- 放大图片比例 -->
+	if(new_height GT max_height,
+		copy(new_height, max_height);
+		mul(new_width, new_height, aspect);
+	  );
+	roundval(new_width);
+	roundval(new_height);
+	copy(layer[%1].width, new_width);
+	copy(layer[%1].height, new_height);
+    </action>
+    <!--核心参数，不做改动-->
+	
+	
+		<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_1"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_1" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="文化一点通"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_1"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_1" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_1].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_1" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_1" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16px;"
+			       html="data:testtext_1"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_1">
+       　　“文化易点通”，秉承“打通最后一公里的数字文化圈”的核心理念，集“传统文化与现代化技术、创新视听体验与知识服务”为一体，是一款24小时自助服务型智慧文化产品。文化易点通创新文化馆、图书馆服务，突破时间与空间的限制，通过对音视频资源的广泛搜罗和系统整理，为市民、读者提供了线上线下联动的文化服务。
+	</data>
+	<!-- 结束 -->
+
+
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_2"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_2" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="微信打印机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_2"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_2" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_2].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_2" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_2" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16px;"
+			       html="data:testtext_2"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_2">
+       　　微信留影机是一款文化馆吸引粉丝的线下互动工具，市民朋友可以在线下关注微信打印机屏幕上的二维码，成为图书馆微信公众平台的粉丝，然后通过将自己想要打印的照片发送到公众号上，打印机就自动会打印出照片。
+	</data>
+	<!-- 结束 -->
+	
+	
+
+	 <!--弹出框属性-->
+        <layer name="textbox_3"  type="container" visible="false" align="center" x="0" y="-50" width="600" height="450"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_3" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="智慧数据墙"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_3"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_3" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_3].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_3" type="container" align="center" x="0" y="0" width="430" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_3" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:18px;"
+			       html="data:testtext_3"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_3">
+       　　智慧数据墙作为信息集中实时展示平台，通过对信息的开放显示来对到馆人员进行数据服务，到馆人员可以通过阅读这些数据信息掌握到热点信息、公告信息，其他到馆人员关注的热点信息等。做到馆内信息、电子资源信息、各种流量信息、其他到馆人员热点信息的共享，为到馆人员提供精准服务。
+	</data>
+	<!-- 结束 -->
+	
+	
+
+	<!-- 开始 -->
+
+	<!--弹出框属性-->
+	<layer name="textbox_4"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_4" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="自助借还机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_4"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_4" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_4].visible,false);stopsound(bggsnd24);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_4" type="container" align="leftbottom" x="2.5%" y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_4" url="%SWFPATH%/hotspot/5.jpg" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+	<!--文本属性-->
+		<layer name="textmask_4" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="230" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		
+		<layer name="text_4" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+	    border="false" background="false"
+		css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16.5px;"
+		html="data:testtext_4"			       
+		/><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+    </layer>
+	
+	<data name="testtext_4">
+　　读者可在此根据说明自行借还，借书密码默认为一卡通号。康庄分馆图书可在此归还。
+
+	</data>
+	<!-- 结束 -->
+	
+	
+	
+
+	<!-- 开始 -->
+
+	<!--弹出框属性-->
+	<layer name="textbox_5"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_5" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="自助复印打印扫描机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_5"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_5" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_5].visible,false);stopsound(bggsnd25);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_5" type="container" align="leftbottom" x="2.5%" y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_5" url="%SWFPATH%/hotspot/4.jpg" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		
+		<!--文本属性-->
+		<layer name="textmask_5" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="230" height="290" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_5" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="10" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:16px;"
+			       html="data:testtext_5"			       
+			       /><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+    </layer>
+	
+	<data name="testtext_5">
+　　可刷卡自行上传文件打印、复印、扫描。复印打印0.12元/A4一页，扫描：0.05元/64k
+	</data>
+	<!-- 结束 -->
+	
+
+										
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_6"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_6" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="文化地图"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_6"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_6" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_6].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_6" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_6" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_6"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_6">
+       　　依托当地文化馆实体文化资源，将地区文化资源浓缩，并与当地实际地图结合，增加空间感，让使用者能够一目了然的看到当地文化资源的分布情况，并通过文字介绍、视频介绍、360全景等功能直观感受当地风俗，对当地文化风貌有一个初步的了解。
+	</data>
+	<!-- 结束 -->
+	
+	
+										
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_8"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_8" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="点唱吧"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_8"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_8" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_8].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_8" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_8" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_8"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_8">
+       　　Mini点唱吧是一款集唱歌、练歌、录歌等多功能为一体，满足市民读者、好友、亲子间享受音乐、尽情歌唱的迷你唱歌设备。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_9"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_9" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="全息戏曲"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_9"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_9" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_9].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_9" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_9" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_9"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_9">
+       　　古色古香的真实戏台，惟妙惟肖的虚拟戏曲表演者，AR技术给观众带来的不仅仅是视觉上的冲击，更是心灵的震撼！观众通过敲击戏鼓，来切换选择需要观看的戏曲类别，再通过点击选择具体对应的戏曲唱段或行当，使命令指令发送到戏台，戏台内会出现相对应的3D立体成像的全息戏曲表演内容。观众还可以通过戏台下的LED屏看到戏曲的相应台词。可以说是完全模拟了在戏台观戏的真实场景！
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_10"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_10" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="书画展示互动墙"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_10"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_10" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_10].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_10" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_10" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_10"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_10">
+       　　非遗互动墙利用数字化设备提供著名作品鉴赏，展出文化馆组织创作的书画、摄影、展览等作品，提供微信扫码下载欣赏。也可将馆内现有图片、书籍、文档、文献、文物资料等线下资源转化为数字资源，在非遗互动墙上展示。市民可通过手势隔空操作非遗互动墙，从而实现隔空翻页和图片浏览的需求。可以将现有的资源录入到后台，支持后期资源与前台页面同步更新的功能。能够满足市民通过扫描“二维码”分享到朋友圈的需求。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_11"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_11" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="非遗物件展示区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_11"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_11" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_11].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_11" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_11" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_11"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_11">
+       　　干活干活干活干活干活干活干活
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_12"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_12" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="非遗全息展柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_12"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_12" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_12].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_12" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_12" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_12"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_12">
+       　　全息展柜融合透明屏展柜和可触控特性与先进的unity开发技术，将实物与文化信息统一在同一维度,进行综合性的信息展示。在增强展示设备信息承载能力和读者接受度的同时，提高人机交互的趣味性，透明屏展柜内部具有放置中小型展品的空间，展品会透过透明屏展示在读者面前，读者可用手触控屏幕获取关于该展品的更多信息，例如图文介绍、历史追溯、视频欣赏等。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_13"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_13" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="非遗多媒体触摸屏"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_13"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_13" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_13].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_13" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_13" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_13"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_13">
+       　　非遗多媒体触摸系统是集图像、声音、文字为一体的多媒体电脑系统，它能综合信息发布者的意愿和接受者对信息的需求及接受习惯，对信息进行收集、加工、整合并进行双向传播。作为一种最新的展现方式，它是目前最简单、方便、自然的一种人机交互方式。它赋予了多媒体以崭新的面貌，是极富吸引力的全新多媒体交互体验工具，具备自身图文并茂、多姿多彩和简便操作的特点。
+	</data>
+	<!-- 结束 -->
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_14"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_14" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="三层南侧书架"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_14"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_14" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_14].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_14" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_14" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_14"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_14">
+       　　中文图书，分类号：F，H，I
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_15"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_15" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="二层北侧书架"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_15"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_15" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_15].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_15" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_15" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_15"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_15">
+       　　中文图书，分类号：A-D
+	</data>
+	<!-- 结束 -->
+	
+	<!-- 开始 -->
+	<!--弹出框属性-->
+	<layer name="textbox_16"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_16" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="地方民歌"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_16"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_16" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_16].visible,false);stopsound(bggsnd28);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_16" type="container" align="leftbottom" x="2.5%"  y="0" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_16" url="%SWFPATH%/hotspot/17.jpg" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		<!--文本属性-->
+		<layer name="textmask_16" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="220" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		<layer name="text_16" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:14px;"
+			       html="data:testtext_16"			       
+			       /><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+		
+    </layer>
+	
+	<data name="testtext_16">      　　     地方民歌是当地群众在长期的生产生活中所创作的民间音乐，经过数百年的口耳相传，作为当地民间歌曲，其中《牛歌》被广为传唱，在展示区配套相应的播放设备，通过聆听、欣赏的方式学习《牛歌》，同时搭配相应的空间设计，打造与之相符的特色环境。体验学习无数劳动人民的智慧结晶。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+	<!--弹出框属性-->
+	<layer name="textbox_17"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_17" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="竹马灯"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_17"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_17" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_17].visible,false);stopsound(bggsnd28);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_17" type="container" align="leftbottom" x="2.5%"  y="10" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_17" url="%SWFPATH%/hotspot/15.jpg" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		<!--文本属性-->
+		<layer name="textmask_17" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="220" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		<layer name="text_17" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:14px;"
+			       html="data:testtext_17"			       
+			       /><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+		
+    </layer>
+	
+	<data name="testtext_17">      　　     竹马灯分布于沿江江南一带，铜陵地区主要是钟鸣镇及周边县市，主要是以三国演义关公解皇嫂一段故事为基本内容通过民间艺术加工，配以民间乐器道具，形成一种集布阵、穿花、跑马等为表演手段的民间表演形式。铜陵市竹马灯，起于明末，兴于清代，后每逢国泰民安，风调雨顺之年，就自行组织，祈求来年五谷丰登、身体安康。
+	</data>
+	<!-- 结束 -->
+	
+	<!-- 开始 -->
+	<!--弹出框属性-->
+	<layer name="textbox_18"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" scale.normal="1" scale.mobile="0.5" width="600" height="400"  bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_18" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="陆家湾老龙灯会"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->
+        <layer name="button_close_mask_18"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        	<layer name="button_close_18" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_18].visible,false);stopsound(bggsnd28);" 
+			       />
+		</layer>	       
+        
+        <!--图片属性-->
+        <layer name="pic_mask_18" type="container" align="leftbottom" x="2.5%"  y="10" width="300" height="350" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+
+            <layer name="pic_18" url="%SWFPATH%/hotspot/16.jpg" align="center"   onloaded="picture_resize(get(name));" state="small" />
+        </layer>
+		
+		<!--文本属性-->
+		<layer name="textmask_18" type="container" align="right" x="5%" y.normal="0" y.mobile="10%" width="220" height="250" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+		<layer name="text_18" url="%SWFPATH%/plugins/textfield.swf" children="false" align.normal="center" align.mobile="top" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:14px;"
+			       html="data:testtext_18"			       
+			       /><!--css——文字属性； html——所引入文本-->
+			       <!--PC端无文字拖动-->
+		</layer>
+		
+    </layer>
+	
+	<data name="testtext_18">      　　     陆家湾老龙灯会是枞阳县枞阳镇陆家湾及周边区域的传统民俗活动，至今已有1100余年的历史，虽经历战乱和动荡，但龙灯会活动从未间断。陆家湾龙灯有诸多表演套路，大多已失传，现存套路有：倒板、螺丝悬顶、金龙抱柱、龙舞四门等。它寄托着美好愿望和追求，不仅丰富了群众文化生活，还增添了喜庆祥和的节日气氛。
+	</data>
+	<!-- 结束 -->
+	
+	
+	
+	
+	<!-- 移动端设置 -->
+	<krpano devices="mobile">
+	
+	
+     <layer name="textbox_1" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_1" width="50" height="50" >
+		<layer name="button_close_1"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_1" >
+		<layer name="text_1" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>	
+
+   
+	 <layer name="textbox_2" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_2" width="50" height="50" >
+		<layer name="button_close_2"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_2" >
+		<layer name="text_2" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>	
+
+	 
+
+	 <layer name="textbox_4" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_4" width="50" height="50" >
+		<layer name="button_close_4"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_4" >
+		<layer name="text_4" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>
+	 
+	 
+	 
+
+	 <layer name="textbox_5" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_5" width="50" height="50" >
+		<layer name="button_close_5"  width="45" height="45" />
+		</layer>	
+		<!--文字缩小-->
+		<layer name="textmask_5" >
+		<layer name="text_5" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>
+	 
+	 
+	 
+
+	 <layer name="textbox_6" >
+    	<!--关闭按钮加大-->
+    	<layer name="button_close_mask_6" width="50" height="50" >
+		<layer name="button_close_6"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_6" >
+		<layer name="text_6" 
+	           css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:6px;"
+			       />
+		</layer>
+		
+	 </layer>
+	 
+	 
+	 
+
+     <layer name="textbox_3" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_3" width="50" height="50" >
+		<layer name="button_close_3"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_3" y="-5%" >
+			<layer name="text_3" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  
+	    <layer name="textbox_8" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_8" width="50" height="50" >
+		<layer name="button_close_8"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_8" y="-5%" >
+			<layer name="text_8" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  
+	  	<layer name="textbox_9" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_9" width="50" height="50" >
+		<layer name="button_close_9"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_9" y="-5%" >
+			<layer name="text_9" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  	<layer name="textbox_10" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_10" width="50" height="50" >
+		<layer name="button_close_10"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_10" y="-5%" >
+			<layer name="text_10" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+
+	  
+	  	<layer name="textbox_11" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_11" width="50" height="50" >
+		<layer name="button_close_11"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_11" y="-5%" >
+			<layer name="text_11" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  
+	  	<layer name="textbox_12" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_12" width="50" height="50" >
+		<layer name="button_close_12"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_12" y="-5%" >
+			<layer name="text_12" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  	<layer name="textbox_13" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_13" width="50" height="50" >
+		<layer name="button_close_13"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_13" y="-5%" >
+			<layer name="text_13" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  
+	  	<layer name="textbox_14" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_14" width="50" height="50" >
+		<layer name="button_close_14"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_14" y="-5%" >
+			<layer name="text_14" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  	<layer name="textbox_15" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_15" width="50" height="50" >
+		<layer name="button_close_15"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_15" y="-5%" >
+			<layer name="text_15" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  	<layer name="textbox_16" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_16" width="50" height="50" >
+		<layer name="button_close_16"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_16" y="-5%" >
+			<layer name="text_16" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  	<layer name="textbox_17" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_17" width="50" height="50" >
+		<layer name="button_close_17"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_17" y="-5%" >
+			<layer name="text_17" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	  
+	  	<layer name="textbox_18" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_18" width="50" height="50" >
+		<layer name="button_close_18"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_18" y="-5%" >
+			<layer name="text_18" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+	  </layer>
+	</krpano>
+    <!-- 移动端设置 -->
+
+</krpano>
