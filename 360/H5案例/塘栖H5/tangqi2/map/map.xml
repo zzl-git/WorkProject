@@ -1,0 +1,393 @@
+﻿<krpano >
+
+<!-- 地图热点坐标样式 -->
+<style name="spot" zorder="2" url="%SWFPATH%/map/map_hotspot.png" scale="2"  alpha="0.7" align="lefttop"
+	   edge="center" 
+	   onhover="tween(alpha,1);tween(scale,2.5);addhotspotthumbname;"    
+     onout="tween(alpha,0.7);tween(scale,2);removehotspotthumb();" 
+	   onclick="loadscenehotspot(get(name));"  />
+
+	 <action name="openmap">
+      if(layer[map_container].x == -550,      
+      tween(layer[map_container].x,0;);    
+    ,     
+     tween(layer[map_container].x,-550);    
+    ); 
+ </action>
+	
+	 
+	<!-- 地图容器  这里有宽度与高度 需要与地图大小保持一致 场景里的地图大小必须保持一致 这样才美观 -->
+    <layer name="map_container" type="container" keep="true"  align="rightbottom" scale.normal="0.5" scale.mobile="0.25" bgrcolor="0x000000" bgalpha="0" x="-550" y.normal="0" y.mobile="5%" ox="0" oy="0" width="1100" height="800"   maskchildren="true" bgcapture="true" scalechildren="true"  onhover="tween(alpha,1);"  onout=
+"tween(alpha,0.9);"  >
+
+		
+	<!--  这个里是你索要表达的地图楼层信息 -->
+	
+    <layer name="floor_1" zorder="1" url="%SWFPATH%/map/yichen.png" alpha="0.4" align="rightbottom" y="10%" />
+	
+	  <layer name="floor_2" zorder="1" url="%SWFPATH%/map/erchen.png" alpha="0.4" align="rightbottom" y="25%" />
+	
+	  <layer name="floor_3" zorder="1" url="%SWFPATH%/map/sanchen.png" alpha="0.4" align="rightbottom" y="40%" />
+	
+	  
+	 
+  	    <!-- 地图容器 -->   
+        <layer name="map" align="center" enabled="true" zorder="9" alpha="0.9" capture="true"  x="-40" y="20" scalechildren="True" 
+	         children="True" >	
+         
+		    
+        <layer name="map_1" visible="false" type="container"  zorder="3"  width="1000" height="1000" bgcolor="0xFFFFFF" bgalpha="0" >
+     
+          <layer name="spot0" style="spot" x="467"  y="573" />
+          <layer name="spot1" style="spot" x="493"  y="407" />
+          <layer name="spot2" style="spot" x="241"   y="249" />
+          <layer name="spot3" style="spot" x="560"   y="184" />
+		  <layer name="spot4" style="spot" x="682"  y="259" />
+          <layer name="spot5" style="spot" x="748"  y="190" />
+		  <layer name="spot6" style="spot" x="860"  y="256" />
+		  <layer name="spot7" style="spot" x="971"  y="134" />
+		  <layer name="spot8" style="spot" x="1092"  y="256" />
+		  <layer name="spot9" style="spot" x="940"  y="438" />
+		  <layer name="spot10" style="spot" x="1026"  y="410" />
+		  
+		  
+
+      
+        </layer> 
+
+
+	   <layer name="map_2" visible="false" type="container"  zorder="3"  width="1000" height="1000" bgcolor="0xFFFFFF" bgalpha="0" >	
+		
+
+		  <layer name="spot11" style="spot" x="889"  y="404" />
+		  <layer name="spot12" style="spot" x="745"  y="395" />
+		  <layer name="spot13" style="spot" x="751"  y="317" />
+		  <layer name="spot14" style="spot" x="614"  y="319" />
+		  <layer name="spot15" style="spot" x="610"  y="424" />
+		  <layer name="spot16" style="spot" x="350"  y="424" />
+          <layer name="spot17" style="spot" x="286"  y="407" />
+          <layer name="spot18" style="spot" x="208"  y="211" />
+          <layer name="spot19" style="spot" x="395"  y="209" />
+          <layer name="spot20" style="spot" x="465"  y="311" />
+          <layer name="spot21" style="spot" x="532"  y="226" />
+          <layer name="spot22" style="spot" x="789"  y="230" />
+          <layer name="spot23" style="spot" x="999"  y="299" />
+          <layer name="spot24" style="spot" x="1129"  y="256" />
+
+
+
+        
+                       
+	        </layer>  
+		 
+		
+		    <!-- 地图三以及热点信息 -->
+		    <layer name="map_3" visible="false" type="container"  zorder="3"  width="1000" height="1000" bgcolor="0xFFFFFF" bgalpha="0" >	
+
+
+            <layer name="spot25" style="spot" x="888"  y="475" />
+			<layer name="spot26" style="spot" x="891"  y="322" />
+			<layer name="spot27" style="spot" x="826"  y="260" />
+			<layer name="spot28" style="spot" x="492"  y="258" />
+
+		  
+   
+          
+	        </layer> 
+			
+
+
+	       
+		<!--这个是雷达  --> 	
+       <layer name="radar" url="%SWFPATH%/plugins/radar.swf" alturl="%SWFPATH%/plugins/radar.js" visible="false" 
+				 dragable="false" zorder="1" align="lefttop" edge="center" scale="1" 
+				 onover="set(layer[scrollarea].draggable,false);"
+				 onout="set(layer[scrollarea].draggable,true);"		 
+	             linecolor="0" fillcolor="0xFF9900" fillalpha="0.7" editmode="true" invert="false" />
+		<!-- 这个是当前场景的地图热点颜色变化 -->		 
+		<plugin name="active_spot" url="%SWFPATH%/map/map_active.png" keep="true" scale="2" align="lefttop" x="0" y ="0" edge="center" visible="true" zorder="6" />				 	 			 			
+			  
+			</layer>
+	</layer>
+
+ <!-- 以下内容需要插入到场景标签内 以便场景信息同步 -->
+
+<action name="duoceng_1_action">
+skin_updatescroll();
+  activemap(map_1,%SWFPATH%/map/1L.png,0.8);<!--显示地图 第一个参数是表示地图上热点 第二个参数地图图片 第三个参数是透明度 -->
+  floorurl(scene_1L-1,scene_2L-1,scene_3L-1,scene_4L-1,scene_5L-1,scene_6L-1);<!--多层地图 第一参数表示一层 第二个参数表示二层 第三个参数表示三层 名称与场景里的ID保持一致 -->
+  flooralpha(floor_1);<!--当前楼层显示高亮 -->  
+</action>
+
+<action name="scene_0_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot0].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(258);<!--雷达方向 -->
+</action>
+<action name="scene_1_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot1].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(294);<!--雷达方向 --> 
+</action>
+<action name="scene_2_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot2].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(275);<!--雷达方向 --> 
+</action>
+<action name="scene_3_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot3].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(260);<!--雷达方向 --> 
+</action>
+<action name="scene_4_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot4].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(360);<!--雷达方向 -->
+</action>
+<action name="scene_5_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot5].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(405);<!--雷达方向 -->
+</action>
+<action name="scene_6_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot6].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(720);<!--雷达方向 -->
+</action>
+
+<action name="scene_7_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot7].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(290);<!--雷达方向 -->
+</action>
+<action name="scene_8_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot8].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(100);<!--雷达方向 -->
+</action>
+<action name="scene_9_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot9].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(190);<!--雷达方向 -->
+</action>
+<action name="scene_10_action">
+  duoceng_1_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot10].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(230);<!--雷达方向 -->
+</action>
+
+
+
+
+<action name="duoceng_2_action">
+skin_updatescroll();
+  activemap(map_2,%SWFPATH%/map/2L.png,0.8);<!--显示地图 第一个参数是表示地图上热点 第二个参数地图图片 第三个参数是透明度 -->
+  floorurl(scene_1L-1,scene_2L-1,scene_3L-1,scene_4L-1,scene_5L-1,scene_6L-1);<!--多层地图 第一参数表示一层 第二个参数表示二层 第三个参数表 示三层 名称与场景里的ID保持一致 -->
+  flooralpha(floor_2);<!--当前楼层显示高亮 -->  
+</action>
+
+
+<action name="scene_11_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot11].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(220);<!--雷达方向 -->
+</action>
+<action name="scene_12_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot12].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(180);<!--雷达方向 -->
+</action>
+<action name="scene_13_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot13].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(0);<!--雷达方向 -->
+</action>
+<action name="scene_14_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot14].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(290);<!--雷达方向 -->
+</action>
+<action name="scene_15_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot15].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(150);<!--雷达方向 -->
+</action>
+<action name="scene_16_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot16].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(200);<!--雷达方向 -->
+</action>
+<action name="scene_17_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot17].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(310);<!--雷达方向 -->
+</action>
+<action name="scene_18_action">
+  duoceng_2_action();<!-- 引用一层全局属性 -->
+  set(layer[spot18].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(190);<!--雷达方向 -->
+</action>
+<action name="scene_19_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot19].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(160);<!--雷达方向 -->
+</action>
+<action name="scene_20_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot20].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(520);<!--雷达方向 -->
+</action>
+<action name="scene_21_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot21].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(710);<!--雷达方向 -->
+</action>
+<action name="scene_22_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot22].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(350);<!--雷达方向 -->
+</action>
+<action name="scene_23_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot23].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(365);<!--雷达方向 -->
+</action>
+<action name="scene_24_action">
+  duoceng_2_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot24].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(210);<!--雷达方向 -->
+</action>
+
+
+
+
+<!-- 三层 全局属性  -->
+<action name="duoceng_3_action">
+skin_updatescroll();
+  activemap(map_3,%SWFPATH%/map/3L.png,0.8);<!--显示地图 第一个参数是表示地图上热点 第二个参数地图图片 第三个参数是透明度 -->
+  floorurl(scene_1L-1,scene_2L-1,scene_3L-1,scene_4L-1,scene_5L-1,scene_6L-1);<!--多层地图 第一参数表示一层 第二个参数表示二层 第三个参数表示三层 名称与场景里的ID保持一致 -->
+  flooralpha(floor_3);<!--当前楼层显示高亮 -->  
+</action>
+
+
+<action name="scene_25_action">
+  duoceng_3_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot25].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(180);<!--雷达方向 -->
+</action>
+<action name="scene_26_action">
+  duoceng_3_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot26].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(190);<!--雷达方向 -->
+</action>
+<action name="scene_27_action">
+  duoceng_3_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot27].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(190);<!--雷达方向 -->
+</action>
+<action name="scene_28_action">
+  duoceng_3_action(); <!-- 引用一层全局属性 -->
+  set(layer[spot28].url,%SWFPATH%/map/map_visited.png);<!--改变地图热点样式 -->
+  activatespot(195);<!--雷达方向 -->
+</action>
+
+
+
+
+
+	
+	
+	 <action name="flooralpha">
+        set(layer[floor_1].visible,true);
+		set(layer[floor_2].visible,true);
+		set(layer[floor_3].visible,true);	
+		<!-- 如需增加楼层 在这里添加-->
+
+		set(layer[floor_1].alpha,0.5);
+		set(layer[floor_2].alpha,0.5);
+		set(layer[floor_3].alpha,0.5);
+		<!-- 如需增加楼层 在这里添加-->
+		set(layer[%1].alpha,1);
+
+		set(layer[floor_1].scale,1.2);
+		set(layer[floor_2].scale,1.2);
+		set(layer[floor_3].scale,1.2);
+		<!-- 如需增加楼层 在这里添加-->
+		set(layer[%1].scale,1.5); <!--楼层按钮原始大小-->
+	</action>
+	
+	<action name="floorurl">		
+		set(layer[floor_1].onclick,loadscene(%1,null,MERGE,BLEND(0.5)));
+		set(layer[floor_2].onclick,loadscene(%2,null,MERGE,BLEND(0.5)));
+		set(layer[floor_3].onclick,loadscene(%3,null,MERGE,BLEND(0.5)));		
+		<!-- 如需增加楼层 在这里添加-->
+	</action>
+	
+	<action name="floorvisible">
+		set(layer[floor_1].visible,false);
+		set(layer[floor_2].visible,false);
+		set(layer[floor_3].visible,false);
+		<!-- 如需增加楼层 在这里添加-->
+	</action>
+	
+	<action name="activemap">
+	  set(layer[map_container].visible, true);
+      set(layer[map_1].visible, false);
+	  set(layer[map_2].visible, false);
+	  set(layer[map_3].visible, false);
+		
+	    <!-- 如需增加楼层 在这里添加-->
+		set(layer[%1].visible, true);
+		set(layer[map].url, %2);
+		set(layer[map].scale, %3);	
+	</action>
+	
+	
+	
+	<!-- 以下是核心参数不能做任何修改 建议用户自己在编辑个XML加密保存 -->
+	<action name="activatespot">
+		txtadd(spot_index,'spot',get(scene[get(xml.scene)].index));
+		layer[map_1].setcenter(0,0);
+		copy(layer[active_spot].x, layer[get(spot_index)].x);
+		copy(layer[active_spot].y, layer[get(spot_index)].y);
+		copy(layer[radar].x, layer[get(spot_index)].x);
+		copy(layer[radar].y, layer[get(spot_index)].y);
+		set(layer[radar].heading, %1);
+		set(layer[radar].visible, true);
+	</action>
+	
+    <action name="addhotspotthumb">
+       addlayer(addhotspotthumb);
+		   set(layer[addhotspotthumb].align, lefttop);
+		   set(layer[addhotspotthumb].keep, true);
+		   copy(layer[addhotspotthumb].x, mouse.stagex);
+		   copy(layer[addhotspotthumb].y, mouse.stagey);
+		   set(layer[addhotspotthumb].ox, -240);
+		   set(layer[addhotspotthumb].oy, 10);
+		   set(layer[addhotspotthumb].width, 240);
+		   set(layer[addhotspotthumb].height, 180);
+		   subtxt(scene_indexnum, %1, 4, 2);
+		   copy(layer[addhotspotthumb].url,scene[get(scene_indexnum)].thumburl);
+		   set(layer[addhotspotthumb].zorder, 92);
+		   set(layer[addhotspotthumb].effect,glow(0xFFFFFF,0.9,10,10));
+		   addlayer(hotspotthumbtext);
+       layer[hotspotthumbtext].loadstyle(skin_thumbtext_style1);
+	     set(layer[hotspotthumbtext].keep, true);
+       set(layer[hotspotthumbtext].parent, addhotspotthumb);
+       set(layer[hotspotthumbtext].html, get(scene[get(scene_indexnum)].title));   
+		</action>
+		
+		<action name="loadscenehotspot">       
+		   subtxt(scene_indexnum_1, %1, 4, 2);
+		   loadscene(get(scene[get(scene_indexnum_1)].name),null,MERGE,BLEND(0.5));
+		</action>
+	
+    <action name="removehotspotthumb">	
+       removelayer(addhotspotthumb);	 
+		   removelayer(hotspotthumbtext);
+	    </action>
+
+	<textstyle name="SKIN_TOOLTIPS" font="Arial" fontsize="16" bold="true" italic="false" background="false" border="false" textcolor="0xFFFFFF" effect="dropshadow(1,45,0x000000,4,1);" fadeintime="0.1" fadetime="0.05" />
+	<style name="skin_thumbtext_style1" url="%SWFPATH%/plugins/textfield.swf" align="bottom" width="100%" autoheight="true" y="0" enabled="false" background="true" backgroundcolor="0x000000" backgroundalpha="0.5" border="false" css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;" textshadow="1" />
+
+</krpano>
