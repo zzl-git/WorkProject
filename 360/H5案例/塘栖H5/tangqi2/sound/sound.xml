@@ -1,0 +1,46 @@
+﻿<krpano>
+
+<!-- START:音乐控制  不做改动-->
+<plugin name="soundinterface" url="%SWFPATH%/plugins/soundinterface.swf" alturl="%SWFPATH%/plugins/soundinterface.js" rootpath="" preload="true" keep="true" volume="1.0"/>
+<!-- END:音乐控制 -->
+
+<!--音乐数量-->
+<events onremovepano="stopsound(bggsnd1);stopsound(bggsnd2);stopsound(bggsnd3);stopsound(bggsnd4);stopsound(bggsnd5);stopsound(bggsnd6);stopsound(bggsnd7);stopsound(bggsnd8);stopsound(bggsnd9);stopsound(bggsnd10);stopsound(bggsnd11);stopsound(bggsnd12);stopsound(bggsnd13);stopsound(bggsnd14);stopsound(bggsnd15);stopsound(bggsnd16);stopsound(bggsnd17);stopsound(bggsnd18);stopsound(bggsnd19);stopsound(bggsnd20);stopsound(bggsnd21);" 
+	onnewpano="automusic()"
+/>
+<!--首个场景 对应 0 -->
+<action name="automusic">	
+		if(scene[get(xml.scene)].index EQ 0,playsound(bggsnd1, '%SWFPATH%/sound/01.mp3', 1););	
+		if(scene[get(xml.scene)].index EQ 2,playsound(bggsnd2, '%SWFPATH%/sound/02.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 5,playsound(bggsnd3, '%SWFPATH%/sound/03.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 9,playsound(bggsnd4, '%SWFPATH%/sound/04.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 11,playsound(bggsnd5, '%SWFPATH%/sound/05.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 12,playsound(bggsnd6, '%SWFPATH%/sound/06.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 13,playsound(bggsnd6, '%SWFPATH%/sound/22.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 14,playsound(bggsnd7, '%SWFPATH%/sound/07.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 16,playsound(bggsnd8, '%SWFPATH%/sound/08.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 18,playsound(bggsnd8, '%SWFPATH%/sound/23.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 21,playsound(bggsnd9, '%SWFPATH%/sound/09.mp3', 1););		
+		if(scene[get(xml.scene)].index EQ 22,playsound(bggsnd10, '%SWFPATH%/sound/10.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 23,playsound(bggsnd10, '%SWFPATH%/sound/24.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 24,playsound(bggsnd11, '%SWFPATH%/sound/11.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 26,playsound(bggsnd12, '%SWFPATH%/sound/12.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 29,playsound(bggsnd13, '%SWFPATH%/sound/13.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 30,playsound(bggsnd14, '%SWFPATH%/sound/14.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 33,playsound(bggsnd15, '%SWFPATH%/sound/15.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 34,playsound(bggsnd16, '%SWFPATH%/sound/16.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 35,playsound(bggsnd16, '%SWFPATH%/sound/25.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 36,playsound(bggsnd17, '%SWFPATH%/sound/17.mp3', 1););
+		if(scene[get(xml.scene)].index EQ 37,playsound(bggsnd17, '%SWFPATH%/sound/26.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 38,playsound(bggsnd18, '%SWFPATH%/sound/18.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 39,playsound(bggsnd19, '%SWFPATH%/sound/19.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 42,playsound(bggsnd20, '%SWFPATH%/sound/20.mp3', 1););
+        if(scene[get(xml.scene)].index EQ 43,playsound(bggsnd21, '%SWFPATH%/sound/21.mp3', 1););		
+
+		
+
+
+	
+</action>
+
+</krpano>
