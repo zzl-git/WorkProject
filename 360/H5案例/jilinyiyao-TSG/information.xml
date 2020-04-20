@@ -1,0 +1,1388 @@
+﻿<krpano>
+
+  <layer name="information_mask0" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" maskchildren="true" scalechildren="true" children="true"
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close0" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation0()" >
+  </layer>
+  
+  <layer name="text0"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　欢迎走进吉林医药学院图书馆！吉林医药学院图书馆创建于1975年，前身为中国人民解放军第四军医大学吉林军医学院图书馆，2004年随学校由军队整体移交吉林省，更名为吉林医药学院图书馆。经过几十年的发展建设，图书馆现已发展成为文献信息资源丰富、办馆理念先进、自动化程度较高、服务方式多样的大学图书馆。[br/][br/]　　现馆舍启用于2011年，建筑面积为2.38万平方米，阅览座位2500余个。整体设计庄重、典雅,充满现代气息，充分体现了“开放、休闲、人性”的设计理念。图书馆实行藏、借、阅、检、咨合一的大流通管理模式，每周开馆时间94.5小时，读者以自助服务为主，配备有：自助借还机、自助阅报屏、自助检索机、电子书借阅机等现代化设备。服务器存储空间100T，网站24小时开放，满足图书馆自动化、网络化、数字化建设需求。[br/][br/]　　图书馆馆藏资源丰富，现馆藏纸质图书90万余册，电子图书72万册；纸质期刊1100余种，电子期刊8400余种，各类数据库25个。形成了以医学为中心，兼及理、工、农、文等各门类学科，符合学校教学科研发展需要的馆藏体系。[br/][br/]　　图书馆的发展目标是建设成为文献资源丰富，人员素质较高，设备设施先进，管理一流、服务一流的大学图书馆。 
+"
+       
+       css="font-family:times new roman; font-size:17px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       parent="layer[information_mask0]"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation0">
+      if(layer[information_mask0].x == -65%,      
+      tween(layer[information_mask0].x,25%);    
+    ,     
+     tween(layer[information_mask0].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask0" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text0"
+       css="font-family:times new roman; font-size:13px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation0">
+      if(layer[information_mask0].x == -80%,      
+      tween(layer[information_mask0].x,10%);    
+    ,     
+     tween(layer[information_mask0].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+   <layer name="information_mask1" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="60%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close1" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation1()" >
+  </layer>
+  
+  <layer name="text1"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　      这是门禁刷卡处，读者需持本人校园一卡通刷卡进入图书馆。进馆要主动刷卡哟！"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation1">
+      if(layer[information_mask1].x == -65%,      
+      tween(layer[information_mask1].x,25%);    
+    ,     
+     tween(layer[information_mask1].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask1" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text1"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation1">
+      if(layer[information_mask1].x == -80%,      
+      tween(layer[information_mask1].x,10%);    
+    ,     
+     tween(layer[information_mask1].x,-80%);    
+    ); 
+ </action>
+
+     </krpano>
+
+   <layer name="information_mask2" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close2" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation2()" >
+  </layer>
+  
+  <layer name="text2"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　总服务台位于大厅的左侧，读者在这里可以进行信息咨询、办理读者证、图书借还等。这里还为读者设置了便民服务箱，以方便读者取用。我们将尽最大的努力竭诚为读者服务。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation2">
+      if(layer[information_mask2].x == -65%,      
+      tween(layer[information_mask2].x,25%);    
+    ,     
+     tween(layer[information_mask2].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask2" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text2"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation2">
+      if(layer[information_mask2].x == -80%,      
+      tween(layer[information_mask2].x,10%);    
+    ,     
+     tween(layer[information_mask2].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+   <layer name="information_mask3" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close3" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation3()" >
+  </layer>
+  
+  <layer name="text3"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　  电子阅览区位于一楼东南侧，分为A、B、C三个区域，共有电脑340余台。在这里，读者刷卡后可免费查阅图书馆订购的各类资源数据库，还可以浏览Internet上的各种信息；同时，电子阅览区还承担部分课程的机上实习任务。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation3">
+      if(layer[information_mask3].x == -65%,      
+      tween(layer[information_mask3].x,25%);    
+    ,     
+     tween(layer[information_mask3].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask3" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text3"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation3">
+      if(layer[information_mask3].x == -80%,      
+      tween(layer[information_mask3].x,10%);    
+    ,     
+     tween(layer[information_mask3].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+   <layer name="information_mask4" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   		 
+  <!--关闭按钮-->
+  <layer name="information_close4" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation4()" >
+  </layer>
+  
+  <layer name="text4"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　有些累了吧，想舒缓一下神经，放松的喝一杯咖啡，用一些食物，你可以坐在休闲区玻璃幕前尽情眺望四周，看看人来人往，品味春夏与秋冬，亦或是和小伙伴们在这里喁喁私语，交换一下在图书馆的“奇遇”。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation4">
+      if(layer[information_mask4].x == -65%,      
+      tween(layer[information_mask4].x,25%);    
+    ,     
+     tween(layer[information_mask4].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask4" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text4"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation4">
+      if(layer[information_mask4].x == -80%%,      
+      tween(layer[information_mask4].x,10%);    
+    ,     
+     tween(layer[information_mask4].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+   <layer name="information_mask5" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close5" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation5()" >
+  </layer>
+  
+  <layer name="text5"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　二楼主要分布有医学图书阅览区、报刊阅览区及自习区。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation5">
+      if(layer[information_mask5].x == -65%,      
+      tween(layer[information_mask5].x,25%);    
+    ,     
+     tween(layer[information_mask5].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask5" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text5"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="75%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation5">
+      if(layer[information_mask5].x == -80%,      
+      tween(layer[information_mask5].x,10%);    
+    ,     
+     tween(layer[information_mask5].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+   <layer name="information_mask6" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close6" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation6()" >
+  </layer>
+  
+  <layer name="text6"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　期刊阅览区位于二楼东南侧，提供各类现刊的阅览。期刊不能借出哦。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation6">
+      if(layer[information_mask6].x == -65%,      
+      tween(layer[information_mask6].x,25%);    
+    ,     
+     tween(layer[information_mask6].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask6" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text6"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation6">
+      if(layer[information_mask6].x == -80%,      
+      tween(layer[information_mask6].x,10%);    
+    ,     
+     tween(layer[information_mask6].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+   <layer name="information_mask7" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+	<!--关闭按钮-->
+  <layer name="information_close7" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation7()" >
+  </layer>
+  
+  <layer name="text7"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　医学图书阅览区位于二楼的南北两个区域，可为读者提供生物科学、预防医学、基础医学、临床医学、内科学、外科学、药学等各类中文医学类图书28万册。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation7">
+      if(layer[information_mask7].x == -65%,      
+      tween(layer[information_mask7].x,25%);    
+    ,     
+     tween(layer[information_mask7].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask7" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text7"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation7">
+      if(layer[information_mask7].x == -80%,      
+      tween(layer[information_mask7].x,10%);    
+    ,     
+     tween(layer[information_mask7].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+  <layer name="information_mask8" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+	<!--关闭按钮-->
+  <layer name="information_close8" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation8()" >
+  </layer>
+  
+  <layer name="text8"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　这里是休闲区，有舒适的沙发和阅览桌椅，一切让阅读更惬意。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation8">
+      if(layer[information_mask8].x == -65%,      
+      tween(layer[information_mask8].x,25%);    
+    ,     
+     tween(layer[information_mask8].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask8" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text8"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation8">
+      if(layer[information_mask8].x == -80%,      
+      tween(layer[information_mask8].x,10%);    
+    ,     
+     tween(layer[information_mask8].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+  <layer name="information_mask9" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+   <!--关闭按钮-->
+  <layer name="information_close9" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation9()" >
+  </layer>
+  
+  <layer name="text9"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　三楼主要分布有自习区（室），视听室、培训室、学习讨论室、会议交流中心。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation9">
+      if(layer[information_mask9].x == -65%,      
+      tween(layer[information_mask9].x,25%);    
+    ,     
+     tween(layer[information_mask9].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask9" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text9"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation9">
+      if(layer[information_mask9].x == -80%,      
+      tween(layer[information_mask9].x,10%);    
+    ,     
+     tween(layer[information_mask9].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+  <layer name="information_mask10" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close10" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation10()" >
+  </layer>
+  
+  <layer name="text10"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　第一学术厅位于三楼北侧，可容纳160人，内安装有投影、话筒、音响等设备，是举办会议、讲座的最佳场所。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation10">
+      if(layer[information_mask10].x == -65%,      
+      tween(layer[information_mask10].x,25%);    
+    ,     
+     tween(layer[information_mask10].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask10" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text10"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation10">
+      if(layer[information_mask10].x == -80%,      
+      tween(layer[information_mask10].x,10%);    
+    ,     
+     tween(layer[information_mask10].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+  <layer name="information_mask11" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close11" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation11()" >
+  </layer>
+  
+  <layer name="text11"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 这里是视听室，每周免费为大家放映电影，你不仅能够观赏到许多经典影片，还能以班级为单位申请专门放映。请关注每周影讯，当然，你也可以推荐好片给我们呦。  "
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation11">
+      if(layer[information_mask11].x == -65%,      
+      tween(layer[information_mask11].x,25%);    
+    ,     
+     tween(layer[information_mask11].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask11" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text11"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation11">
+      if(layer[information_mask11].x == -80%,      
+      tween(layer[information_mask11].x,10%);    
+    ,     
+     tween(layer[information_mask11].x,-80%);    
+    ); 
+ </action>
+
+
+<!-- 开始 -->
+   </krpano>
+
+  <layer name="information_mask12" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close12" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation12()" >
+  </layer>
+  
+  <layer name="text12"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 开放式自习室，位于三楼西南侧，空调开放。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation12">
+      if(layer[information_mask12].x == -65%,      
+      tween(layer[information_mask12].x,25%);    
+    ,     
+     tween(layer[information_mask12].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask12" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text12"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation12">
+      if(layer[information_mask12].x == -80%,      
+      tween(layer[information_mask12].x,10%);    
+    ,     
+     tween(layer[information_mask12].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+
+
+
+  <layer name="information_mask13" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close13" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation13()" >
+  </layer>
+  
+  <layer name="text13"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　开放式自习区，位于三楼南侧，空调开放。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation13">
+      if(layer[information_mask13].x == -65%,      
+      tween(layer[information_mask13].x,25%);    
+    ,     
+     tween(layer[information_mask13].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask13" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text13"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation13">
+      if(layer[information_mask13].x == -80%,      
+      tween(layer[information_mask13].x,10%);    
+    ,     
+     tween(layer[information_mask13].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+
+   
+
+  <layer name="information_mask14" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close14" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation14()" >
+  </layer>
+  
+  <layer name="text14"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 新闻联播，百家讲坛，球赛直播……你休闲的好去处。不过请记住，控制好音量哦，不要影响了附近想要远离喧嚣，渴望安静的读者朋友。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation14">
+      if(layer[information_mask14].x == -65%,      
+      tween(layer[information_mask14].x,25%);    
+    ,     
+     tween(layer[information_mask14].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask14" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text14"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation14">
+      if(layer[information_mask14].x == -80%,      
+      tween(layer[information_mask14].x,10%);    
+    ,     
+     tween(layer[information_mask14].x,-80%);    
+    ); 
+ </action>
+<!-- 结束 -->
+
+
+<!-- 开始 -->
+   </krpano>
+
+  <layer name="information_mask15" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close15" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation15()" >
+  </layer>
+  
+  <layer name="text15"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 第二学术厅位于三楼北侧，可容纳220人，设施齐全，安装有投影、话筒、音响等设备，是举办会议、讲座的最佳场所。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation15">
+      if(layer[information_mask15].x == -65%,      
+      tween(layer[information_mask15].x,25%);    
+    ,     
+     tween(layer[information_mask15].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask15" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text15"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation15">
+      if(layer[information_mask15].x == -80%,      
+      tween(layer[information_mask15].x,10%);    
+    ,     
+     tween(layer[information_mask15].x,-80%);    
+    ); 
+ </action>
+<!-- 结束 -->
+
+
+<!-- 开始 -->
+   </krpano>
+
+  <layer name="information_mask16" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close16" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation16()" >
+  </layer>
+  
+  <layer name="text16"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 四楼分布有自然科学图书阅览区、人文社科图书阅览区，过刊、工具书、外文图  书阅览区及单人研究间。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation16">
+      if(layer[information_mask16].x == -65%,      
+      tween(layer[information_mask16].x,25%);    
+    ,     
+     tween(layer[information_mask16].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask16" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text16"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation16">
+      if(layer[information_mask16].x == -80%,      
+      tween(layer[information_mask16].x,10%);    
+    ,     
+     tween(layer[information_mask16].x,-80%);    
+    ); 
+ </action>
+<!-- 结束 -->
+
+
+
+
+<!-- 开始 -->
+   </krpano>
+
+  <layer name="information_mask17" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+  <!--关闭按钮-->
+  <layer name="information_close17" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation17()" >
+  </layer>
+  
+  <layer name="text17"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 自然科学图书阅览区位于四楼东南侧，可为读者提供计算机、数理科学等自然科学类图书5万余册。 "
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation17">
+      if(layer[information_mask17].x == -65%,      
+      tween(layer[information_mask17].x,25%);    
+    ,     
+     tween(layer[information_mask17].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask17" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text17"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation17">
+      if(layer[information_mask17].x == -80%,      
+      tween(layer[information_mask17].x,10%);    
+    ,     
+     tween(layer[information_mask17].x,-80%);    
+    ); 
+ </action>
+
+   </krpano>
+
+  <layer name="information_mask18" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+<!--关闭按钮-->
+  <layer name="information_close18" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation18()" >
+  </layer>
+  
+  <layer name="text18"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　  人文社科图书阅览区位于四楼南侧，可为读者提供文化教育、历史地理、语言文字、文学艺术等人文社会科学类图书20万册。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation18">
+      if(layer[information_mask18].x == -65%,      
+      tween(layer[information_mask18].x,25%);    
+    ,     
+     tween(layer[information_mask18].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask18" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text18"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation18">
+      if(layer[information_mask18].x == -80%,      
+      tween(layer[information_mask18].x,10%);    
+    ,     
+     tween(layer[information_mask18].x,-80%);    
+    ); 
+ </action>
+
+
+   </krpano>
+
+
+<layer name="information_mask19" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+	   
+<!--关闭按钮-->
+  <layer name="information_close19" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation19()" >
+  </layer>
+  
+  <layer name="text19"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　 研究学习区位于四楼北侧，一个个独立、静谧的空间，可供个人学习、研究使用。这里是免费对读者开放的，有需求的读者可以在图书馆网页递交使用申请，而后携带个人一卡通到图书馆一楼总服务台办理使用手续。使用期间，请遵守相关管理规定并保管好钥匙哦。"
+       css="font-family:times new roman; font-size:23px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation19">
+      if(layer[information_mask19].x == -65%,      
+      tween(layer[information_mask19].x,25%);    
+    ,     
+     tween(layer[information_mask19].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask19" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text19"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation19">
+      if(layer[information_mask19].x == -80%,      
+      tween(layer[information_mask19].x,10%);    
+    ,     
+     tween(layer[information_mask19].x,-80%);    
+    ); 
+ </action>
+
+
+   </krpano>
+
+
+<layer name="information_mask20" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  
+    <!--关闭按钮-->
+  <layer name="information_close20" url="%SWFPATH%/skin/shut.png" keep="false" align="righttop" scale="1" y="0 " x="0" width="30" height="30" onclick="openinformation20()" >
+  </layer>
+  
+  
+  <layer name="text20"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　  过刊、工具书、外文书阅览区位于四楼东北侧，可为读者提供过刊、工具书及各类西文图书近5万册。不过，过刊和工具书是不能外借的哦。"
+       css="font-family:times new roman; font-size:24px; color:#F49F1E;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation20">
+      if(layer[information_mask20].x == -65%,      
+      tween(layer[information_mask20].x,25%);    
+    ,     
+     tween(layer[information_mask20].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask20" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text20"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation20">
+      if(layer[information_mask20].x == -80%,      
+      tween(layer[information_mask20].x,10%);    
+    ,     
+     tween(layer[information_mask20].x,-80%);    
+    ); 
+ </action>
+
+
+   </krpano>
+
+
+
+
+
+
+
+
+<layer name="information_mask21" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text21"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　  映入眼前是一方外形如沙漏的景观雕塑,三座石砌立柱，仿若一本本书籍层层重叠，象征知识积累，石柱顶端连接时光沙漏，碧翠凌空，镜面艳丽色彩结合几何图案，如璀璨星空、如蓝天碧海、如汩汩流沙，设计者寓意：置身在台州市图书馆这座知识殿堂，如遨游浩瀚的学海，在时间的沙漏沉淀下，静享书香。"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation21">
+      if(layer[information_mask21].x == -65%,      
+      tween(layer[information_mask21].x,25%);    
+    ,     
+     tween(layer[information_mask21].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask21" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text21"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation21">
+      if(layer[information_mask21].x == -80%,      
+      tween(layer[information_mask21].x,10%);    
+    ,     
+     tween(layer[information_mask21].x,-80%);    
+    ); 
+ </action>
+
+
+   </krpano>
+
+
+
+
+
+
+
+
+<layer name="information_mask22" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text22"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　  无障碍图书馆设于图书馆一楼西北面，旨在推广信息传播无障碍和阅读无障碍的理念，馆内铺设了盲道，该盲道与市政盲道相连，馆内分为少儿、成人、视障人员三个电子阅览区，以及光盘视听区、光盘外借区以及盲文借阅区，对全体市民免费开放，读者持我馆借阅卡、身份证或者市民卡，可免费刷卡上网。其中少儿电子阅览区配有音响、投影等设备，在此定期举办老年人基础知识入门培训班、数字图书馆培训班、视障读者活动等活动。"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation22">
+      if(layer[information_mask22].x == -65%,      
+      tween(layer[information_mask22].x,25%);    
+    ,     
+     tween(layer[information_mask22].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask22" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text22"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation22">
+      if(layer[information_mask22].x == -80%,      
+      tween(layer[information_mask22].x,10%);    
+    ,     
+     tween(layer[information_mask22].x,-80%);    
+    ); 
+ </action>
+
+
+   </krpano>
+
+
+
+
+
+
+
+
+<layer name="information_mask23" type="container" keep="false" scale="1" visible="true" align="left" width="50%" height="80%" x="-65%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text23"
+       url="plugins/textfield.swf"
+       align="center"  
+       html="　　  "
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="80%"
+       autoheight="true"
+       zorder="9"
+       wordwrap="true"
+       selectable="true"
+       embeddedfonts="false"
+       background="true"
+       backgroundcolor="0x000000"
+       backgroundalpha="0.0"
+       onautosized="" >
+       
+       </layer>
+   </layer>
+
+  <action name="openinformation23">
+      if(layer[information_mask23].x == -65%,      
+      tween(layer[information_mask23].x,25%);    
+    ,     
+     tween(layer[information_mask23].x,-65%);    
+    ); 
+ </action>
+      
+       <krpano devices="mobile">
+
+        <layer name="information_mask23" type="container" keep="false" scale="1" visible="true" align="left" width="80%" height="70%" x="-80%" y="0" bgrcolor="0x000000" bgalpha="0.5" 
+       >
+  
+  <layer name="text23"
+       css="font-family:times new roman; font-size:24px; color:#EFEFEF;"
+       width="60%">       
+       
+       </layer>
+   </layer>
+   
+   <action name="openinformation23">
+      if(layer[information_mask23].x == -80%,      
+      tween(layer[information_mask23].x,10%);    
+    ,     
+     tween(layer[information_mask23].x,-80%);    
+    ); 
+ </action>
+
+
+   </krpano>
+
+</krpano>
