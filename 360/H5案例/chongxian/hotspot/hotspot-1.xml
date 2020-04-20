@@ -1,0 +1,1103 @@
+<krpano>
+
+    <!--核心参数，不做改动-->
+    <action name="draglayer_text">
+		if(%1 != dragging,
+			copy(drag_currenty, y);
+			copy(drag_stagey, mouse.stagey);
+			draglayer_text(dragging,%2);
+		  ,
+			if(pressed,
+				sub(dy, mouse.stagey, drag_stagey);
+				add(y1, drag_currenty, dy);
+				add(y2, y1, pixelheight);
+				sub(y2, %2);
+				if(y1 GT 0, set(y1,0));
+				if(y2 LT 0, sub(y1,y2));
+				copy(y,y1);
+				delayedcall(0, draglayer_text(dragging,%2) );
+			  );
+		  );
+	</action>
+
+    <action name="picture_resize">
+
+	div(aspect, layer[%1].imagewidth, layer[%1].imageheight);
+	mul(new_width, layer[get(layer[%1].parent)].width, 0.9);<!-- 显示图片比例 -->
+	div(new_height, new_width, aspect);
+	mul(max_height, layer[get(layer[%1].parent)].height, 0.9);<!-- 显示图片比例 -->
+	if(new_height GT max_height,
+		copy(new_height, max_height);
+		mul(new_width, new_height, aspect);
+	  );
+	roundval(new_width);
+	roundval(new_height);
+	copy(layer[%1].width, new_width);
+	copy(layer[%1].height, new_height);
+   </action>
+
+   <action name="picture_resize_stage">	
+	div(aspect, layer[%1].imagewidth, layer[%1].imageheight);
+	mul(new_width, stagewidth, 0.8); <!-- 放大图片比例 -->
+	div(new_height, new_width, aspect);
+	mul(max_height, stageheight, 0.8);<!-- 放大图片比例 -->
+	if(new_height GT max_height,
+		copy(new_height, max_height);
+		mul(new_width, new_height, aspect);
+	  );
+	roundval(new_width);
+	roundval(new_height);
+	copy(layer[%1].width, new_width);
+	copy(layer[%1].height, new_height);
+    </action>
+    <!--核心参数，不做改动-->
+
+        <!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_1"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_1" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="检索机"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_1"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_1" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_1].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_1" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_1" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_1"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_1">
+       　　通过输入题名，作者等信息找到图书的索书号，由此到索书号对应的书架上找到图书。
+	</data>
+	<!-- 结束 -->
+	
+	
+	    <!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_2"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_2" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="服务台宣传屏"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_2"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_2" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_2].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_2" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_2" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_2"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_2">
+       　　显示每日到馆人次，借阅图书情况等基本信息，实时更新。
+	</data>
+	<!-- 结束 -->
+	
+	
+		<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_3"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_3" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="现刊区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_3"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_3" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_3].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_3" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_3" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_3"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_3">
+       　　存放当年期刊，分类号：A-K,O-T,U-Z，按分类号排放，不外借。
+	</data>
+	<!-- 结束 -->
+	
+	    <!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_4"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_4" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="现报区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_4"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_4" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_4].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_4" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_4" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_4"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_4">
+       　　现报区，存放本周报纸，一周前报纸放到二层过报屋，按拼音排序，不外借。
+	</data>
+	<!-- 结束 -->
+	
+		<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_5"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_5" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="新书展示区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_5"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_5" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_5].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_5" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_5" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_5"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_5">
+       　　新书上架之前暂存在于此，一月后送回楼层书架。本区域图书按类摆放。
+	</data>
+	<!-- 结束 -->
+	
+		<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_6"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_6" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="一层存包柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_6"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_6" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_6].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_6" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_6" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_6"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_6">
+       　　自助存包柜，按提示刷卡存取，取物时要求全部拿出。本层存包柜为日常存包，物品不得过夜。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_7"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_7" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="现刊阅览区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_7"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_7" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_7].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_7" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_7" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_7"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_7">
+       　　存放当年科技期刊。分类号：TB-TG,提供阅览不外借。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_8"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_8" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="书墙"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_8"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_8" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_8].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_8" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_8" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_8"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_8">
+       　　中文装订期刊，社科类过刊是红色装帧，科技类过刊是绿色装帧。按年代--分类号排序。提供阅览不外借。
+	</data>
+	<!-- 结束 -->
+	
+	
+		
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_9"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_9" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="二层存包柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_9"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_9" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_9].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_9" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_9" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_9"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_9">
+       　　自助存包柜，按提示刷卡存取，取物时要求全部拿出。本层存包柜为学期存包，学期末清柜。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_10"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_10" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="三层期刊阅览区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_10"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_10" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_10].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_10" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_10" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_10"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_10">
+       　　现刊阅览区，存放当年科技期刊，分类号：TH-TN，可阅览不外借。
+	</data>
+	<!-- 结束 -->
+	
+	
+		
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_11"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_11" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="数字培训空间304"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_11"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_11" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_11].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_11" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_11" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_11"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_11">
+       　　数字培训空间，设有电脑24台，可刷卡自由上网，可预约培训。
+	</data>
+	<!-- 结束 -->
+	
+			
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_12"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_12" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="三层存包柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_12"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_12" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_12].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_12" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_12" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_12"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_12">
+       　　自助存包柜，按提示刷卡存取，取物时要求全部拿出。本层存包柜为学期存包，每学期期末清柜。
+	</data>
+	<!-- 结束 -->
+	
+	
+				
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_13"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_13" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="四层存包柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_13"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_13" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_13].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_13" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_13" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_13"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_13">
+       　　自助存包柜，按提示刷卡存取，取物时要求全部拿出。本层存包柜为学期存包，每学期期末清柜。
+	</data>
+	<!-- 结束 -->
+	
+	
+					
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_14"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_14" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="四层期刊阅览区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_14"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_14" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_14].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_14" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_14" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_14"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_14">
+       　　现刊阅览区，存放当年科技期刊，分类号：TP-TV，提供阅览不外借。
+	</data>
+	<!-- 结束 -->
+	
+	
+						
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_15"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_15" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="数字共享空间404"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_15"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_15" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_15].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_15" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_15" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_15"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_15">
+       　　数字共享空间，设有电脑24台，可刷卡自由上网，可预约培训。
+	</data>
+	<!-- 结束 -->
+	
+	
+							
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_16"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_16" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="研讨室"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_16"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_16" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_16].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_16" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_16" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_16"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_16">
+       　　提供3-6人团队学术研讨，预约人数3人以上，最长时间3小时。内设触控一体机或交互式白板、黑板，6人位桌椅，提供电源插座、WiFi。
+	</data>
+	<!-- 结束 -->
+	
+	
+								
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_17"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_17" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="五层存包柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_17"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_17" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_17].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_17" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_17" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_17"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_17">
+       　　自助存包柜，按提示刷卡存取，取物时要求全部拿出。本层存包柜为学期存包，每学期期末清柜。
+	</data>
+	<!-- 结束 -->
+	
+	
+									
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_18"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_18" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="考研物品暂存区"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_18"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_18" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_18].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_18" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_18" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_18"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_18">
+       　　考研物品暂存书架：存放考研物品，每年秋季学期开放，考研结束后清理。
+	</data>
+	<!-- 结束 -->
+	
+	
+										
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_19"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_19" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="六层存包柜"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_19"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_19" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_19].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_19" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_19" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_19"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_19">
+       　　自助存包柜，按提示刷卡存取，取物时要求全部拿出。本层存包柜为学期存包，每学期期末清柜。
+	</data>
+	<!-- 结束 -->
+	
+	
+	<!-- 开始 -->
+
+	    <!--弹出框属性-->
+        <layer name="textbox_20"  type="container" visible="false" align="center" x="0" y.normal="-5%" y.mobile="5%" width="600" height="400" scale.normal="1" scale.mobile="0.5" bgroundedge="3" bgcolor="0x333333" bgalpha="0.8" bgcapture="true" bgborder="3 0xFFFFFF 1" scalechildren="true" children="true" >
+		
+        <!--弹出框标题属性-->
+		<layer name="title_20" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5%" width="100%" autoheight="true"
+		           border="false" background="false" 
+			       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:18px;"
+			       html="二层东侧书架"
+			       /><!--html——标题文字，css——文字大小/颜色属性-->
+
+        <!--关闭按钮属性-->        
+        <layer name="button_close_mask_20"  type="container" align="righttop" edge="center"  y="5" x="5" width="30" height="30" bgroundedge="30" bgcolor="0x000000" bgalpha="1" bgcapture="true" bgborder="3 0xFFFFFF 1"  >
+
+        <layer name="button_close_20" url="%SWFPATH%/skin/close.png" children="false" enabled="true" align="center"   width="22" height="22" onclick="set(layer[textbox_20].visible,false);" 
+			       />
+
+		</layer>	       
+       
+			<layer name="textmask_20" type="container" align="center" x="0" y="0" width.normal="500" width.mobile="500" height.normal="250" height.mobile="300" bgcolor="0xFFFFFF" bgalpha="0" maskchildren="true">
+			<layer name="text_20" url="%SWFPATH%/plugins/textfield.swf" children="false" align="center" x="0" y="0" width="100%" autoheight="true"
+			       border="false" background="false"
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:17px;"
+			       html="data:testtext_20"
+			       
+			       />
+		</layer>
+
+		</layer>
+	
+	<data name="testtext_20">
+       　　中文图书，分类号：D-K
+	</data>
+	<!-- 结束 -->
+	
+
+	
+	<!--移动端设置-->
+	<krpano devices="mobile">
+
+    <layer name="textbox_1" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_1" width="50" height="50" >
+		<layer name="button_close_1"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_1" y="-5%" >
+			<layer name="text_1" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		<layer name="textbox_2" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_2" width="50" height="50" >
+		<layer name="button_close_2"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_2" y="-5%" >
+			<layer name="text_2" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		<layer name="textbox_3" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_3" width="50" height="50" >
+		<layer name="button_close_3"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_3" y="-5%" >
+			<layer name="text_3" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+
+		
+		<layer name="textbox_4" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_4" width="50" height="50" >
+		<layer name="button_close_4"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_4" y="-5%" >
+			<layer name="text_4" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		<layer name="textbox_5" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_5" width="50" height="50" >
+		<layer name="button_close_5"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_5" y="-5%" >
+			<layer name="text_5" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		<layer name="textbox_6" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_6" width="50" height="50" >
+		<layer name="button_close_6"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_6" y="-5%" >
+			<layer name="text_6" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+	
+	
+		<layer name="textbox_7" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_7" width="50" height="50" >
+		<layer name="button_close_7"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_7" y="-5%" >
+			<layer name="text_7" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_8" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_8" width="50" height="50" >
+		<layer name="button_close_8"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_8" y="-5%" >
+			<layer name="text_8" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_9" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_9" width="50" height="50" >
+		<layer name="button_close_9"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_9" y="-5%" >
+			<layer name="text_9" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_10" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_10" width="50" height="50" >
+		<layer name="button_close_10"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_10" y="-5%" >
+			<layer name="text_10" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_11" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_11" width="50" height="50" >
+		<layer name="button_close_11"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_11" y="-5%" >
+			<layer name="text_11" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_12" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_12" width="50" height="50" >
+		<layer name="button_close_12"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_12" y="-5%" >
+			<layer name="text_12" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_13" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_13" width="50" height="50" >
+		<layer name="button_close_13"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_13" y="-5%" >
+			<layer name="text_13" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_14" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_14" width="50" height="50" >
+		<layer name="button_close_14"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_14" y="-5%" >
+			<layer name="text_14" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_15" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_15" width="50" height="50" >
+		<layer name="button_close_15"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_15" y="-5%" >
+			<layer name="text_15" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_16" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_16" width="50" height="50" >
+		<layer name="button_close_16"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_16" y="-5%" >
+			<layer name="text_16" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_17" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_17" width="50" height="50" >
+		<layer name="button_close_17"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_17" y="-5%" >
+			<layer name="text_17" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_18" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_18" width="50" height="50" >
+		<layer name="button_close_18"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_18" y="-5%" >
+			<layer name="text_18" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		
+		<layer name="textbox_19" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_19" width="50" height="50" >
+		<layer name="button_close_19"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_19" y="-5%" >
+			<layer name="text_19" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+		<layer name="textbox_20" >    	    
+        <!--关闭按钮加大-->
+    	<layer name="button_close_mask_20" width="50" height="50" >
+		<layer name="button_close_20"  width="45" height="45" />
+		</layer>
+		<!--文字缩小-->
+		<layer name="textmask_20" y="-5%" >
+			<layer name="text_20" 
+			       css="text-align:left; color:#FFFFFF; font-family:Arial; font-size:10px;"
+			        
+			       />
+		</layer>
+		</layer>
+		
+	  
+	</krpano>
+    <!-- 移动端设置 -->
+
+</krpano>
